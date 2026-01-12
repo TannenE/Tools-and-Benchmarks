@@ -1,0 +1,1249 @@
+// Synchronous dynamics 
+directive updates sync;
+
+// Default regulation conditions
+directive regulation default;
+
+
+LIF(0..8); CH(0..8); PD(0..8); Stat3[!-+](0..8); Tcf3[-+](0..17);
+MEKERK(0..17);	Klf4[!-+](0..8); Gbx2[!-+](0..8); Tfcp2l1[!+-](0..8); Esrrb[!-+](0..8);
+Nanog[!-+](0..8); Klf2[!-+](0..8); Tbx3[!-+](0..8); Sox2[!-+](0..8); Sall4[!-+](0..8); Oct4[!-+](0..8);
+Dnmt3a[!](0..8);Dnmt3b[!](0..8);Utf1[!](0..8);
+Otx2[!](0..8);Etv5[!-](0..8); Oct6[!-](0..8);
+Lef1[!-](0..8);Tcf15[!](0..8); 
+
+  
+LIF		LIF		positive;
+CH		CH		positive;
+PD		PD		positive;
+LIF		Stat3		positive;
+Stat3	Klf4 positive;
+Stat3	Gbx2	positive; 
+Stat3 Tfcp2l1 positive; 
+CH		Tcf3	negative;
+Tcf3 	Tfcp2l1 negative; 
+Tcf3 	Esrrb	negative; 
+PD		MEKERK  negative;
+MEKERK	Nanog	negative;	
+MEKERK	Tcf3 	negative;
+Dnmt3a Dnmt3b positive optional;
+Dnmt3a Utf1 positive optional;
+Dnmt3a Otx2 positive optional;
+Dnmt3a Lef1 positive optional;
+Dnmt3b Sox2 negative optional;
+Dnmt3b Dnmt3a positive optional;
+Dnmt3b Utf1 positive optional;
+Dnmt3b Otx2 positive optional;
+Dnmt3b Lef1 positive optional;
+Utf1 Sall4 positive optional;
+Utf1 Dnmt3a positive optional;
+Utf1 Otx2 positive optional;
+Utf1 Etv5 positive optional;
+
+Utf1 Tcf15 positive optional;
+Otx2 Dnmt3a positive optional;
+Otx2 Dnmt3b positive optional;
+Otx2 Utf1 positive optional;
+Otx2 Lef1 positive optional;
+Etv5 Utf1 positive optional;
+
+
+Lef1 Klf4 negative optional;
+Lef1 Esrrb negative optional;
+Lef1 Tbx3 negative optional;
+Lef1 Nanog negative optional;
+Lef1 Sox2 negative optional;
+Lef1 Dnmt3a positive optional;
+Lef1 Dnmt3b positive optional;
+Lef1 Otx2 positive optional;
+Tcf15 Oct4 positive optional;
+Tcf15 Utf1 positive optional;
+Gbx2 Tcf3 negative optional;
+Dnmt3a Tbx3 negative optional;
+Dnmt3a Nanog negative optional;
+Dnmt3b Klf4 negative optional;
+Dnmt3b Esrrb negative optional;
+Dnmt3b Tbx3 negative optional;
+Dnmt3b Nanog negative optional;
+Dnmt3b Sall4 positive optional;
+Utf1 Lef1 positive optional;
+Otx2 Tbx3 negative optional;
+Otx2 Nanog negative optional;
+Otx2 Sall4 positive optional;
+Etv5 Klf2 positive optional;
+Etv5 Tcf3 positive optional;
+Etv5 Oct4 positive optional;
+Etv5 Tcf15 positive optional;
+
+
+Lef1 Tcf3 negative optional;
+Lef1 Stat3 negative optional;
+Lef1 Utf1 positive optional;
+Tcf15 Etv5 positive optional;
+
+
+
+
+
+
+
+
+Esrrb Gbx2 positive optional;
+Gbx2 Esrrb positive optional;
+Esrrb Klf2 positive;
+Klf2 Esrrb positive optional;
+Esrrb Klf4 positive optional;
+Klf4 Esrrb positive optional;
+Esrrb Tbx3 positive optional;
+Tbx3 Esrrb positive optional;
+Esrrb Nanog positive optional;
+Nanog Esrrb positive optional;
+Esrrb Sall4 positive optional;
+Sall4 Esrrb positive optional;
+Esrrb Stat3 positive optional;
+Stat3 Esrrb positive optional;
+Esrrb Tcf3 negative optional;
+Tcf3 Esrrb negative optional;
+Esrrb Tfcp2l1 positive optional;
+Tfcp2l1 Esrrb positive optional;
+Gbx2 Klf2 positive optional;
+Klf2 Gbx2 positive optional;
+Gbx2 Klf4 positive optional;
+Klf4 Gbx2 positive optional;
+Gbx2 Oct4 negative optional;
+Oct4 Gbx2 negative optional;
+Gbx2 Tbx3 positive optional;
+Tbx3 Gbx2 positive optional;
+Gbx2 Nanog negative optional;
+Nanog Gbx2 negative optional;
+Gbx2 Stat3 positive optional;
+Stat3 Gbx2 positive optional;
+Gbx2 Tcf3 negative optional;
+Tcf3 Gbx2 negative optional;
+Gbx2 Tfcp2l1 positive optional;
+Tfcp2l1 Gbx2 positive optional;
+Klf2 Klf4 positive optional;
+Klf4 Klf2 positive optional;
+Klf2 Oct4 positive optional;
+Oct4 Klf2 positive optional;
+Klf2 Sox2 positive optional;
+Sox2 Klf2 positive optional;
+Klf2 Tbx3 positive optional;
+Tbx3 Klf2 positive optional;
+Klf2 Nanog positive optional;
+Nanog Klf2 positive optional;
+Klf2 Sall4 positive optional;
+Sall4 Klf2 positive optional;
+Klf2 Tcf3 positive optional;
+Tcf3 Klf2 positive optional;
+Klf2 Tfcp2l1 positive optional;
+Tfcp2l1 Klf2 positive optional;
+Klf4 Oct4 positive optional;
+Oct4 Klf4 positive optional;
+Klf4 Tbx3 positive optional;
+Tbx3 Klf4 positive optional;
+Klf4 Sall4 positive optional;
+Sall4 Klf4 positive optional;
+Klf4 Stat3 positive optional;
+Stat3 Klf4 positive optional;
+Klf4 Tfcp2l1 positive optional;
+Tfcp2l1 Klf4 positive optional;
+Oct4 Tbx3 positive optional;
+Tbx3 Oct4 positive optional;
+Oct4 Nanog positive optional;
+Nanog Oct4 positive optional;
+Oct4 Sall4 positive optional;
+Sall4 Oct4 positive optional;
+Oct4 Stat3 negative optional;
+Stat3 Oct4 negative optional;
+Oct4 Tcf3 positive optional;
+Tcf3 Oct4 positive optional;
+Oct4 Tfcp2l1 positive optional;
+Tfcp2l1 Oct4 positive optional;
+Sox2 Tbx3 positive optional;
+Tbx3 Sox2 positive optional;
+Sox2 Nanog positive optional;
+Nanog Sox2 positive optional;
+Sox2 Sall4 positive optional;
+Sall4 Sox2 positive optional;
+Sox2 Stat3 negative optional;
+Stat3 Sox2 negative optional;
+Sox2 Tcf3 positive optional;
+Tcf3 Sox2 positive optional;
+Tbx3 Nanog positive optional;
+Nanog Tbx3 positive optional;
+Tbx3 Sall4 positive optional;
+Sall4 Tbx3 positive optional;
+Tbx3 Stat3 positive optional;
+Stat3 Tbx3 positive optional;
+Tbx3 Tcf3 negative optional;
+Tcf3 Tbx3 negative optional;
+Tbx3 Tfcp2l1 positive optional;
+Tfcp2l1 Tbx3 positive optional;
+Nanog Sall4 positive optional;
+Sall4 Nanog positive optional;
+Nanog Tcf3 positive optional;
+Tcf3 Nanog positive optional;
+Nanog Tfcp2l1 positive optional;
+Tfcp2l1 Nanog positive optional;
+Sall4 Stat3 positive optional;
+Stat3 Sall4 positive optional;
+Sall4 Tcf3 negative optional;
+Tcf3 Sall4 negative optional;
+Sall4 Tfcp2l1 positive optional;
+Tfcp2l1 Sall4 positive optional;
+Stat3 Tcf3 negative optional;
+Tcf3 Stat3 negative optional;
+
+
+Klf4 Tcf3 positive optional;
+Klf4 Dnmt3a negative optional;
+
+Klf4 Lef1 negative optional;
+Klf2 Stat3 positive optional;
+Klf2 Tcf3 positive optional;
+Klf2 Dnmt3b negative optional;
+Klf2 Otx2 negative optional;
+Klf2 Etv5 positive optional;
+Klf2 Lef1 negative optional;
+
+Esrrb Sox2 positive optional;
+Esrrb Dnmt3a negative optional;
+Esrrb Dnmt3b negative optional;
+Esrrb Otx2 negative optional;
+Esrrb Etv5 positive optional;
+
+Esrrb Lef1 negative optional;
+
+Tfcp2l1 Stat3 positive optional;
+Tfcp2l1 Sox2 positive optional;
+Tfcp2l1 Dnmt3a negative optional;
+Tfcp2l1 Dnmt3b negative optional;
+Tfcp2l1 Otx2 negative optional;
+Tfcp2l1 Lef1 negative optional;
+
+Tbx3 Dnmt3a negative optional;
+Tbx3 Dnmt3b negative optional;
+Tbx3 Otx2 negative optional;
+
+Tbx3 Lef1 negative optional;
+
+Stat3 Klf2 positive optional;
+Stat3 Tcf3 positive optional;
+Stat3 Nanog positive optional;
+Stat3 Sox2 positive optional;
+Stat3 Dnmt3b negative optional;
+
+Stat3 Lef1 negative optional;
+
+
+Tcf3 Klf4 positive optional;
+Tcf3 Utf1 positive optional;
+Tcf3 Etv5 positive optional;
+
+Tcf3 Tcf15 positive optional;
+Tcf3 Gbx2 negative optional;
+
+Nanog Klf4 positive optional;
+Nanog Stat3 positive optional;
+Nanog Dnmt3a negative optional;
+Nanog Dnmt3b negative optional;
+Nanog Otx2 negative optional;
+Nanog Lef1 negative optional;
+
+Sall4 Dnmt3a positive optional;
+Sall4 Dnmt3b positive optional;
+Sall4 Utf1 positive optional;
+Sall4 Otx2 positive optional;
+Sall4 Lef1 positive optional;
+
+Oct4 Utf1 positive optional;
+Oct4 Etv5 positive optional;
+
+Oct4 Tcf15 positive optional;
+Sox2 Klf4 positive optional;
+Sox2 Esrrb positive optional;
+Sox2 Tfcp2l1 positive optional;
+Sox2 Dnmt3b negative optional;
+Sox2 Etv5 positive optional;
+
+Sox2 Gbx2 negative optional;
+
+Dnmt3a Esrrb negative optional;
+Dnmt3a Tfcp2l1 negative optional;
+Dnmt3a Tbx3 negative optional;
+Dnmt3a Sall4 positive optional;
+Dnmt3a Etv5 positive optional;
+Dnmt3a Gbx2 negative optional;
+
+Dnmt3b Klf2 negative optional; 
+Dnmt3b Tfcp2l1 negative optional;
+Dnmt3b Stat3 negative optional;
+
+Utf1 Tcf3 positive optional;
+Utf1 Oct4 positive optional;
+Utf1 Dnmt3b positive optional;
+
+Otx2 Klf2 negative optional;
+Otx2 Esrrb negative optional;
+Otx2 Tfcp2l1 negative optional;
+Otx2 Etv5 positive optional;
+Otx2 Tcf15 positive optional;
+
+Otx2 Gbx2 negative optional;
+Etv5 Esrrb positive optional;
+Etv5 Sox2 positive optional;
+Etv5 Dnmt3a positive optional;
+Etv5 Otx2 positive optional;
+Etv5 Gbx2 negative optional;
+
+
+
+Lef1 Klf2 negative optional;
+Lef1 Tfcp2l1 negative optional;
+Lef1 Sall4 positive optional;
+
+
+Tcf15 Tcf3 positive optional;
+Tcf15 Dnmt3a positive optional;
+Tcf15 Otx2 positive optional;
+Tcf15 Gbx2 negative optional;
+
+Gbx2 Sox2 negative optional;
+Gbx2 Utf1 negative optional;
+Gbx2 Otx2 negative optional;
+Gbx2 Tcf15 negative optional;
+Oct6 Klf4 negative optional;
+Oct6 Klf2 negative optional;
+Oct6 Esrrb negative optional;
+Oct6 Tbx3 negative optional;
+Oct6 Nanog negative optional;
+Oct6 Sox2 negative optional;
+Oct6 Dnmt3a positive optional;
+Oct6 Dnmt3b positive optional;
+Oct6 Utf1 positive optional;
+Oct6 Lef1 positive optional;
+Oct6 Otx2 positive optional;
+Etv5 Oct6 positive optional;
+
+
+#ExperimentOne[0] |=  $TwoiPlusLifformative;
+#ExperimentOne[0] |=  $NoSignalCultureConditions;
+#ExperimentOne[0] |=  $NoKnockDowns;
+#ExperimentOne[0] |=  $NoOverExpression;
+
+
+not((#ExperimentOne[1] |= $Sox2off ) and (#ExperimentOne [2] |= $Sox2on));
+not((#ExperimentOne[2] |= $Sox2off ) and (#ExperimentOne [3] |= $Sox2on));
+not((#ExperimentOne[3] |= $Sox2off ) and (#ExperimentOne [4] |= $Sox2on));
+not((#ExperimentOne[4] |= $Sox2off ) and (#ExperimentOne [5] |= $Sox2on));
+not((#ExperimentOne[5] |= $Sox2off ) and (#ExperimentOne [6] |= $Sox2on));
+not((#ExperimentOne[6] |= $Sox2off ) and (#ExperimentOne [7] |= $Sox2on));
+not((#ExperimentOne[7] |= $Sox2off ) and (#ExperimentOne [8] |= $Sox2on));
+not((#ExperimentOne[8] |= $Sox2off ) and (#ExperimentOne [9] |= $Sox2on));
+not((#ExperimentOne[9] |= $Sox2off ) and (#ExperimentOne [10] |= $Sox2on));
+not((#ExperimentOne[10] |= $Sox2off ) and (#ExperimentOne [11] |= $Sox2on));
+not((#ExperimentOne[11] |= $Sox2off ) and (#ExperimentOne [12] |= $Sox2on));
+not((#ExperimentOne[12] |= $Sox2off ) and (#ExperimentOne [13] |= $Sox2on));
+not((#ExperimentOne[13] |= $Sox2off ) and (#ExperimentOne [14] |= $Sox2on));
+not((#ExperimentOne[14] |= $Sox2off ) and (#ExperimentOne [15] |= $Sox2on));
+not((#ExperimentOne[15] |= $Sox2off ) and (#ExperimentOne [16] |= $Sox2on));
+not((#ExperimentOne[16] |= $Sox2off ) and (#ExperimentOne [17] |= $Sox2on));
+not((#ExperimentOne[17] |= $Sox2off ) and (#ExperimentOne [18] |= $Sox2on));
+not((#ExperimentOne[18] |= $Sox2off ) and (#ExperimentOne [19] |= $Sox2on));
+
+not((#ExperimentOne[1] |= $Klf4off ) and (#ExperimentOne [2] |= $Klf4on));
+not((#ExperimentOne[2] |= $Klf4off ) and (#ExperimentOne [3] |= $Klf4on));
+not((#ExperimentOne[3] |= $Klf4off ) and (#ExperimentOne [4] |= $Klf4on));
+not((#ExperimentOne[4] |= $Klf4off ) and (#ExperimentOne [5] |= $Klf4on));
+not((#ExperimentOne[5] |= $Klf4off ) and (#ExperimentOne [6] |= $Klf4on));
+not((#ExperimentOne[6] |= $Klf4off ) and (#ExperimentOne [7] |= $Klf4on));
+not((#ExperimentOne[7] |= $Klf4off ) and (#ExperimentOne [8] |= $Klf4on));
+not((#ExperimentOne[8] |= $Klf4off ) and (#ExperimentOne [9] |= $Klf4on));
+not((#ExperimentOne[9] |= $Klf4off ) and (#ExperimentOne [10] |= $Klf4on));
+not((#ExperimentOne[10] |= $Klf4off ) and (#ExperimentOne [11] |= $Klf4on));
+not((#ExperimentOne[11] |= $Klf4off ) and (#ExperimentOne [12] |= $Klf4on));
+not((#ExperimentOne[12] |= $Klf4off ) and (#ExperimentOne [13] |= $Klf4on));
+not((#ExperimentOne[13] |= $Klf4off ) and (#ExperimentOne [14] |= $Klf4on));
+not((#ExperimentOne[14] |= $Klf4off ) and (#ExperimentOne [15] |= $Klf4on));
+not((#ExperimentOne[15] |= $Klf4off ) and (#ExperimentOne [16] |= $Klf4on));
+not((#ExperimentOne[16] |= $Klf4off ) and (#ExperimentOne [17] |= $Klf4on));
+not((#ExperimentOne[17] |= $Klf4off ) and (#ExperimentOne [18] |= $Klf4on));
+not((#ExperimentOne[18] |= $Klf4off ) and (#ExperimentOne [19] |= $Klf4on));
+
+
+not((#ExperimentOne[1] |= $Klf2off ) and (#ExperimentOne [2] |= $Klf2on));
+not((#ExperimentOne[2] |= $Klf2off ) and (#ExperimentOne [3] |= $Klf2on));
+not((#ExperimentOne[3] |= $Klf2off ) and (#ExperimentOne [4] |= $Klf2on));
+not((#ExperimentOne[4] |= $Klf2off ) and (#ExperimentOne [5] |= $Klf2on));
+not((#ExperimentOne[5] |= $Klf2off ) and (#ExperimentOne [6] |= $Klf2on));
+not((#ExperimentOne[6] |= $Klf2off ) and (#ExperimentOne [7] |= $Klf2on));
+not((#ExperimentOne[7] |= $Klf2off ) and (#ExperimentOne [8] |= $Klf2on));
+not((#ExperimentOne[8] |= $Klf2off ) and (#ExperimentOne [9] |= $Klf2on));
+not((#ExperimentOne[9] |= $Klf2off ) and (#ExperimentOne [10] |= $Klf2on));
+not((#ExperimentOne[10] |= $Klf2off ) and (#ExperimentOne [11] |= $Klf2on));
+not((#ExperimentOne[11] |= $Klf2off ) and (#ExperimentOne [12] |= $Klf2on));
+not((#ExperimentOne[12] |= $Klf2off ) and (#ExperimentOne [13] |= $Klf2on));
+not((#ExperimentOne[13] |= $Klf2off ) and (#ExperimentOne [14] |= $Klf2on));
+not((#ExperimentOne[14] |= $Klf2off ) and (#ExperimentOne [15] |= $Klf2on));
+not((#ExperimentOne[15] |= $Klf2off ) and (#ExperimentOne [16] |= $Klf2on));
+not((#ExperimentOne[16] |= $Klf2off ) and (#ExperimentOne [17] |= $Klf2on));
+not((#ExperimentOne[17] |= $Klf2off ) and (#ExperimentOne [18] |= $Klf2on));
+not((#ExperimentOne[18] |= $Klf2off ) and (#ExperimentOne [19] |= $Klf2on));
+
+
+not((#ExperimentOne[1] |= $Esrrboff ) and (#ExperimentOne [2] |= $Esrrbon));
+not((#ExperimentOne[2] |= $Esrrboff ) and (#ExperimentOne [3] |= $Esrrbon));
+not((#ExperimentOne[3] |= $Esrrboff ) and (#ExperimentOne [4] |= $Esrrbon));
+not((#ExperimentOne[4] |= $Esrrboff ) and (#ExperimentOne [5] |= $Esrrbon));
+not((#ExperimentOne[5] |= $Esrrboff ) and (#ExperimentOne [6] |= $Esrrbon));
+not((#ExperimentOne[6] |= $Esrrboff ) and (#ExperimentOne [7] |= $Esrrbon));
+not((#ExperimentOne[7] |= $Esrrboff ) and (#ExperimentOne [8] |= $Esrrbon));
+not((#ExperimentOne[8] |= $Esrrboff ) and (#ExperimentOne [9] |= $Esrrbon));
+not((#ExperimentOne[9] |= $Esrrboff ) and (#ExperimentOne [10] |= $Esrrbon));
+not((#ExperimentOne[10] |= $Esrrboff ) and (#ExperimentOne [11] |= $Esrrbon));
+not((#ExperimentOne[11] |= $Esrrboff ) and (#ExperimentOne [12] |= $Esrrbon));
+not((#ExperimentOne[12] |= $Esrrboff ) and (#ExperimentOne [13] |= $Esrrbon));
+not((#ExperimentOne[13] |= $Esrrboff ) and (#ExperimentOne [14] |= $Esrrbon));
+not((#ExperimentOne[14] |= $Esrrboff ) and (#ExperimentOne [15] |= $Esrrbon));
+not((#ExperimentOne[15] |= $Esrrboff ) and (#ExperimentOne [16] |= $Esrrbon));
+not((#ExperimentOne[16] |= $Esrrboff ) and (#ExperimentOne [17] |= $Esrrbon));
+not((#ExperimentOne[17] |= $Esrrboff ) and (#ExperimentOne [18] |= $Esrrbon));
+not((#ExperimentOne[18] |= $Esrrboff ) and (#ExperimentOne [19] |= $Esrrbon));
+
+not((#ExperimentOne[1] |= $Tfcp2l1off ) and (#ExperimentOne [2] |= $Tfcp2l1on));
+not((#ExperimentOne[2] |= $Tfcp2l1off ) and (#ExperimentOne [3] |= $Tfcp2l1on));
+not((#ExperimentOne[3] |= $Tfcp2l1off ) and (#ExperimentOne [4] |= $Tfcp2l1on));
+not((#ExperimentOne[4] |= $Tfcp2l1off ) and (#ExperimentOne [5] |= $Tfcp2l1on));
+not((#ExperimentOne[5] |= $Tfcp2l1off ) and (#ExperimentOne [6] |= $Tfcp2l1on));
+not((#ExperimentOne[6] |= $Tfcp2l1off ) and (#ExperimentOne [7] |= $Tfcp2l1on));
+not((#ExperimentOne[7] |= $Tfcp2l1off ) and (#ExperimentOne [8] |= $Tfcp2l1on));
+not((#ExperimentOne[8] |= $Tfcp2l1off ) and (#ExperimentOne [9] |= $Tfcp2l1on));
+not((#ExperimentOne[9] |= $Tfcp2l1off ) and (#ExperimentOne [10] |= $Tfcp2l1on));
+not((#ExperimentOne[10] |= $Tfcp2l1off ) and (#ExperimentOne [11] |= $Tfcp2l1on));
+not((#ExperimentOne[11] |= $Tfcp2l1off ) and (#ExperimentOne [12] |= $Tfcp2l1on));
+not((#ExperimentOne[12] |= $Tfcp2l1off ) and (#ExperimentOne [13] |= $Tfcp2l1on));
+not((#ExperimentOne[13] |= $Tfcp2l1off ) and (#ExperimentOne [14] |= $Tfcp2l1on));
+not((#ExperimentOne[14] |= $Tfcp2l1off ) and (#ExperimentOne [15] |= $Tfcp2l1on));
+not((#ExperimentOne[15] |= $Tfcp2l1off ) and (#ExperimentOne [16] |= $Tfcp2l1on));
+not((#ExperimentOne[16] |= $Tfcp2l1off ) and (#ExperimentOne [17] |= $Tfcp2l1on));
+not((#ExperimentOne[17] |= $Tfcp2l1off ) and (#ExperimentOne [18] |= $Tfcp2l1on));
+not((#ExperimentOne[18] |= $Tfcp2l1off ) and (#ExperimentOne [19] |= $Tfcp2l1on));
+
+not((#ExperimentOne[1] |= $Tbx3off ) and (#ExperimentOne [2] |= $Tbx3on));
+not((#ExperimentOne[2] |= $Tbx3off ) and (#ExperimentOne [3] |= $Tbx3on));
+not((#ExperimentOne[3] |= $Tbx3off ) and (#ExperimentOne [4] |= $Tbx3on));
+not((#ExperimentOne[4] |= $Tbx3off ) and (#ExperimentOne [5] |= $Tbx3on));
+not((#ExperimentOne[5] |= $Tbx3off ) and (#ExperimentOne [6] |= $Tbx3on));
+not((#ExperimentOne[6] |= $Tbx3off ) and (#ExperimentOne [7] |= $Tbx3on));
+not((#ExperimentOne[7] |= $Tbx3off ) and (#ExperimentOne [8] |= $Tbx3on));
+not((#ExperimentOne[8] |= $Tbx3off ) and (#ExperimentOne [9] |= $Tbx3on));
+not((#ExperimentOne[9] |= $Tbx3off ) and (#ExperimentOne [10] |= $Tbx3on));
+not((#ExperimentOne[10] |= $Tbx3off ) and (#ExperimentOne [11] |= $Tbx3on));
+not((#ExperimentOne[11] |= $Tbx3off ) and (#ExperimentOne [12] |= $Tbx3on));
+not((#ExperimentOne[12] |= $Tbx3off ) and (#ExperimentOne [13] |= $Tbx3on));
+not((#ExperimentOne[13] |= $Tbx3off ) and (#ExperimentOne [14] |= $Tbx3on));
+not((#ExperimentOne[14] |= $Tbx3off ) and (#ExperimentOne [15] |= $Tbx3on));
+not((#ExperimentOne[15] |= $Tbx3off ) and (#ExperimentOne [16] |= $Tbx3on));
+not((#ExperimentOne[16] |= $Tbx3off ) and (#ExperimentOne [17] |= $Tbx3on));
+not((#ExperimentOne[17] |= $Tbx3off ) and (#ExperimentOne [18] |= $Tbx3on));
+not((#ExperimentOne[18] |= $Tbx3off ) and (#ExperimentOne [19] |= $Tbx3on));
+
+not((#ExperimentOne[1] |= $Nanogoff ) and (#ExperimentOne [2] |= $Nanogon));
+not((#ExperimentOne[2] |= $Nanogoff ) and (#ExperimentOne [3] |= $Nanogon));
+not((#ExperimentOne[3] |= $Nanogoff ) and (#ExperimentOne [4] |= $Nanogon));
+not((#ExperimentOne[4] |= $Nanogoff ) and (#ExperimentOne [5] |= $Nanogon));
+not((#ExperimentOne[5] |= $Nanogoff ) and (#ExperimentOne [6] |= $Nanogon));
+not((#ExperimentOne[6] |= $Nanogoff ) and (#ExperimentOne [7] |= $Nanogon));
+not((#ExperimentOne[7] |= $Nanogoff ) and (#ExperimentOne [8] |= $Nanogon));
+not((#ExperimentOne[8] |= $Nanogoff ) and (#ExperimentOne [9] |= $Nanogon));
+not((#ExperimentOne[9] |= $Nanogoff ) and (#ExperimentOne [10] |= $Nanogon));
+not((#ExperimentOne[10] |= $Nanogoff ) and (#ExperimentOne [11] |= $Nanogon));
+not((#ExperimentOne[11] |= $Nanogoff ) and (#ExperimentOne [12] |= $Nanogon));
+not((#ExperimentOne[12] |= $Nanogoff ) and (#ExperimentOne [13] |= $Nanogon));
+not((#ExperimentOne[13] |= $Nanogoff ) and (#ExperimentOne [14] |= $Nanogon));
+not((#ExperimentOne[14] |= $Nanogoff ) and (#ExperimentOne [15] |= $Nanogon));
+not((#ExperimentOne[15] |= $Nanogoff ) and (#ExperimentOne [16] |= $Nanogon));
+not((#ExperimentOne[16] |= $Nanogoff ) and (#ExperimentOne [17] |= $Nanogon));
+not((#ExperimentOne[17] |= $Nanogoff ) and (#ExperimentOne [18] |= $Nanogon));
+not((#ExperimentOne[18] |= $Nanogoff ) and (#ExperimentOne [19] |= $Nanogon));
+
+not((#ExperimentOne[1] |= $Sall4off ) and (#ExperimentOne [2] |= $Sall4on));
+not((#ExperimentOne[2] |= $Sall4off ) and (#ExperimentOne [3] |= $Sall4on));
+not((#ExperimentOne[3] |= $Sall4off ) and (#ExperimentOne [4] |= $Sall4on));
+not((#ExperimentOne[4] |= $Sall4off ) and (#ExperimentOne [5] |= $Sall4on));
+not((#ExperimentOne[5] |= $Sall4off ) and (#ExperimentOne [6] |= $Sall4on));
+not((#ExperimentOne[6] |= $Sall4off ) and (#ExperimentOne [7] |= $Sall4on));
+not((#ExperimentOne[7] |= $Sall4off ) and (#ExperimentOne [8] |= $Sall4on));
+not((#ExperimentOne[8] |= $Sall4off ) and (#ExperimentOne [9] |= $Sall4on));
+not((#ExperimentOne[9] |= $Sall4off ) and (#ExperimentOne [10] |= $Sall4on));
+not((#ExperimentOne[10] |= $Sall4off ) and (#ExperimentOne [11] |= $Sall4on));
+not((#ExperimentOne[11] |= $Sall4off ) and (#ExperimentOne [12] |= $Sall4on));
+not((#ExperimentOne[12] |= $Sall4off ) and (#ExperimentOne [13] |= $Sall4on));
+not((#ExperimentOne[13] |= $Sall4off ) and (#ExperimentOne [14] |= $Sall4on));
+not((#ExperimentOne[14] |= $Sall4off ) and (#ExperimentOne [15] |= $Sall4on));
+not((#ExperimentOne[15] |= $Sall4off ) and (#ExperimentOne [16] |= $Sall4on));
+not((#ExperimentOne[16] |= $Sall4off ) and (#ExperimentOne [17] |= $Sall4on));
+not((#ExperimentOne[17] |= $Sall4off ) and (#ExperimentOne [18] |= $Sall4on));
+not((#ExperimentOne[18] |= $Sall4off ) and (#ExperimentOne [19] |= $Sall4on));
+
+not((#ExperimentOne[1] |= $Oct4off ) and (#ExperimentOne [2] |= $Oct4on));
+not((#ExperimentOne[2] |= $Oct4off ) and (#ExperimentOne [3] |= $Oct4on));
+not((#ExperimentOne[3] |= $Oct4off ) and (#ExperimentOne [4] |= $Oct4on));
+not((#ExperimentOne[4] |= $Oct4off ) and (#ExperimentOne [5] |= $Oct4on));
+not((#ExperimentOne[5] |= $Oct4off ) and (#ExperimentOne [6] |= $Oct4on));
+not((#ExperimentOne[6] |= $Oct4off ) and (#ExperimentOne [7] |= $Oct4on));
+not((#ExperimentOne[7] |= $Oct4off ) and (#ExperimentOne [8] |= $Oct4on));
+not((#ExperimentOne[8] |= $Oct4off ) and (#ExperimentOne [9] |= $Oct4on));
+not((#ExperimentOne[9] |= $Oct4off ) and (#ExperimentOne [10] |= $Oct4on));
+not((#ExperimentOne[10] |= $Oct4off ) and (#ExperimentOne [11] |= $Oct4on));
+not((#ExperimentOne[11] |= $Oct4off ) and (#ExperimentOne [12] |= $Oct4on));
+not((#ExperimentOne[12] |= $Oct4off ) and (#ExperimentOne [13] |= $Oct4on));
+not((#ExperimentOne[13] |= $Oct4off ) and (#ExperimentOne [14] |= $Oct4on));
+not((#ExperimentOne[14] |= $Oct4off ) and (#ExperimentOne [15] |= $Oct4on));
+not((#ExperimentOne[15] |= $Oct4off ) and (#ExperimentOne [16] |= $Oct4on));
+not((#ExperimentOne[16] |= $Oct4off ) and (#ExperimentOne [17] |= $Oct4on));
+not((#ExperimentOne[17] |= $Oct4off ) and (#ExperimentOne [18] |= $Oct4on));
+not((#ExperimentOne[18] |= $Oct4off ) and (#ExperimentOne [19] |= $Oct4on));
+
+
+
+
+
+
+
+
+
+(#ExperimentOne[1] |=  $TwoiPlusLif48hours) or (#ExperimentOne[2] |=  $TwoiPlusLif48hours) or (#ExperimentOne[3] |=  $TwoiPlusLif48hours) or (#ExperimentOne[4] |=  $TwoiPlusLif48hours) or (#ExperimentOne[5] |=  $TwoiPlusLif48hours) or (#ExperimentOne[6] |=  $TwoiPlusLif48hours) or (#ExperimentOne[7] |=  $TwoiPlusLif48hours) or (#ExperimentOne[8] |=  $TwoiPlusLif48hours) or (#ExperimentOne[9] |=  $TwoiPlusLif48hours) or (#ExperimentOne[10] |=  $TwoiPlusLif48hours) or (#ExperimentOne[11] |=  $TwoiPlusLif48hours) or (#ExperimentOne[12] |=  $TwoiPlusLif48hours) or (#ExperimentOne[13] |=  $TwoiPlusLif48hours) or (#ExperimentOne[14] |=  $TwoiPlusLif48hours) or (#ExperimentOne[15] |=  $TwoiPlusLif48hours) or (#ExperimentOne[16] |=  $TwoiPlusLif48hours) or (#ExperimentOne[17] |=  $TwoiPlusLif48hours) or (#ExperimentOne[18] |=  $TwoiPlusLif48hours) or (#ExperimentOne[19] |=  $TwoiPlusLif48hours);
+#ExperimentOne[20] |=  $PluriRemainOff;
+#ExperimentOne[21] |=  $PluriRemainOff;
+#ExperimentOne[22] |=  $PluriRemainOff;
+#ExperimentOne[23] |=  $PluriRemainOff;
+#ExperimentOne[24] |=  $PluriRemainOff;
+#ExperimentOne[25] |=  $PluriRemainOff;
+
+
+#Experimenttwo[0] |=  $TwoiPlusLif48hours;
+#Experimenttwo[0] |=  $NoSignalCultureConditions;
+#Experimenttwo[0] |=  $NoKnockDowns;
+#Experimenttwo[0] |=  $NoOverExpression;
+#Experimenttwo[19] |= $Tfcp2l1off;
+not((#Experimenttwo[1] |= $Sox2off ) and (#Experimenttwo [2] |= $Sox2on));
+not((#Experimenttwo[2] |= $Sox2off ) and (#Experimenttwo [3] |= $Sox2on));
+not((#Experimenttwo[3] |= $Sox2off ) and (#Experimenttwo [4] |= $Sox2on));
+not((#Experimenttwo[4] |= $Sox2off ) and (#Experimenttwo [5] |= $Sox2on));
+not((#Experimenttwo[5] |= $Sox2off ) and (#Experimenttwo [6] |= $Sox2on));
+not((#Experimenttwo[6] |= $Sox2off ) and (#Experimenttwo [7] |= $Sox2on));
+not((#Experimenttwo[7] |= $Sox2off ) and (#Experimenttwo [8] |= $Sox2on));
+not((#Experimenttwo[8] |= $Sox2off ) and (#Experimenttwo [9] |= $Sox2on));
+not((#Experimenttwo[9] |= $Sox2off ) and (#Experimenttwo [10] |= $Sox2on));
+not((#Experimenttwo[10] |= $Sox2off ) and (#Experimenttwo [11] |= $Sox2on));
+not((#Experimenttwo[11] |= $Sox2off ) and (#Experimenttwo [12] |= $Sox2on));
+not((#Experimenttwo[12] |= $Sox2off ) and (#Experimenttwo [13] |= $Sox2on));
+not((#Experimenttwo[13] |= $Sox2off ) and (#Experimenttwo [14] |= $Sox2on));
+not((#Experimenttwo[14] |= $Sox2off ) and (#Experimenttwo [15] |= $Sox2on));
+not((#Experimenttwo[15] |= $Sox2off ) and (#Experimenttwo [16] |= $Sox2on));
+not((#Experimenttwo[16] |= $Sox2off ) and (#Experimenttwo [17] |= $Sox2on));
+not((#Experimenttwo[17] |= $Sox2off ) and (#Experimenttwo [18] |= $Sox2on));
+not((#Experimenttwo[18] |= $Sox2off ) and (#Experimenttwo [19] |= $Sox2on));
+
+not((#Experimenttwo[1] |= $Klf4off ) and (#Experimenttwo [2] |= $Klf4on));
+not((#Experimenttwo[2] |= $Klf4off ) and (#Experimenttwo [3] |= $Klf4on));
+not((#Experimenttwo[3] |= $Klf4off ) and (#Experimenttwo [4] |= $Klf4on));
+not((#Experimenttwo[4] |= $Klf4off ) and (#Experimenttwo [5] |= $Klf4on));
+not((#Experimenttwo[5] |= $Klf4off ) and (#Experimenttwo [6] |= $Klf4on));
+not((#Experimenttwo[6] |= $Klf4off ) and (#Experimenttwo [7] |= $Klf4on));
+not((#Experimenttwo[7] |= $Klf4off ) and (#Experimenttwo [8] |= $Klf4on));
+not((#Experimenttwo[8] |= $Klf4off ) and (#Experimenttwo [9] |= $Klf4on));
+not((#Experimenttwo[9] |= $Klf4off ) and (#Experimenttwo [10] |= $Klf4on));
+not((#Experimenttwo[10] |= $Klf4off ) and (#Experimenttwo [11] |= $Klf4on));
+not((#Experimenttwo[11] |= $Klf4off ) and (#Experimenttwo [12] |= $Klf4on));
+not((#Experimenttwo[12] |= $Klf4off ) and (#Experimenttwo [13] |= $Klf4on));
+not((#Experimenttwo[13] |= $Klf4off ) and (#Experimenttwo [14] |= $Klf4on));
+not((#Experimenttwo[14] |= $Klf4off ) and (#Experimenttwo [15] |= $Klf4on));
+not((#Experimenttwo[15] |= $Klf4off ) and (#Experimenttwo [16] |= $Klf4on));
+not((#Experimenttwo[16] |= $Klf4off ) and (#Experimenttwo [17] |= $Klf4on));
+not((#Experimenttwo[17] |= $Klf4off ) and (#Experimenttwo [18] |= $Klf4on));
+not((#Experimenttwo[18] |= $Klf4off ) and (#Experimenttwo [19] |= $Klf4on));
+
+
+not((#Experimenttwo[1] |= $Klf2off ) and (#Experimenttwo [2] |= $Klf2on));
+not((#Experimenttwo[2] |= $Klf2off ) and (#Experimenttwo [3] |= $Klf2on));
+not((#Experimenttwo[3] |= $Klf2off ) and (#Experimenttwo [4] |= $Klf2on));
+not((#Experimenttwo[4] |= $Klf2off ) and (#Experimenttwo [5] |= $Klf2on));
+not((#Experimenttwo[5] |= $Klf2off ) and (#Experimenttwo [6] |= $Klf2on));
+not((#Experimenttwo[6] |= $Klf2off ) and (#Experimenttwo [7] |= $Klf2on));
+not((#Experimenttwo[7] |= $Klf2off ) and (#Experimenttwo [8] |= $Klf2on));
+not((#Experimenttwo[8] |= $Klf2off ) and (#Experimenttwo [9] |= $Klf2on));
+not((#Experimenttwo[9] |= $Klf2off ) and (#Experimenttwo [10] |= $Klf2on));
+not((#Experimenttwo[10] |= $Klf2off ) and (#Experimenttwo [11] |= $Klf2on));
+not((#Experimenttwo[11] |= $Klf2off ) and (#Experimenttwo [12] |= $Klf2on));
+not((#Experimenttwo[12] |= $Klf2off ) and (#Experimenttwo [13] |= $Klf2on));
+not((#Experimenttwo[13] |= $Klf2off ) and (#Experimenttwo [14] |= $Klf2on));
+not((#Experimenttwo[14] |= $Klf2off ) and (#Experimenttwo [15] |= $Klf2on));
+not((#Experimenttwo[15] |= $Klf2off ) and (#Experimenttwo [16] |= $Klf2on));
+not((#Experimenttwo[16] |= $Klf2off ) and (#Experimenttwo [17] |= $Klf2on));
+not((#Experimenttwo[17] |= $Klf2off ) and (#Experimenttwo [18] |= $Klf2on));
+not((#Experimenttwo[18] |= $Klf2off ) and (#Experimenttwo [19] |= $Klf2on));
+
+
+not((#Experimenttwo[1] |= $Esrrboff ) and (#Experimenttwo [2] |= $Esrrbon));
+not((#Experimenttwo[2] |= $Esrrboff ) and (#Experimenttwo [3] |= $Esrrbon));
+not((#Experimenttwo[3] |= $Esrrboff ) and (#Experimenttwo [4] |= $Esrrbon));
+not((#Experimenttwo[4] |= $Esrrboff ) and (#Experimenttwo [5] |= $Esrrbon));
+not((#Experimenttwo[5] |= $Esrrboff ) and (#Experimenttwo [6] |= $Esrrbon));
+not((#Experimenttwo[6] |= $Esrrboff ) and (#Experimenttwo [7] |= $Esrrbon));
+not((#Experimenttwo[7] |= $Esrrboff ) and (#Experimenttwo [8] |= $Esrrbon));
+not((#Experimenttwo[8] |= $Esrrboff ) and (#Experimenttwo [9] |= $Esrrbon));
+not((#Experimenttwo[9] |= $Esrrboff ) and (#Experimenttwo [10] |= $Esrrbon));
+not((#Experimenttwo[10] |= $Esrrboff ) and (#Experimenttwo [11] |= $Esrrbon));
+not((#Experimenttwo[11] |= $Esrrboff ) and (#Experimenttwo [12] |= $Esrrbon));
+not((#Experimenttwo[12] |= $Esrrboff ) and (#Experimenttwo [13] |= $Esrrbon));
+not((#Experimenttwo[13] |= $Esrrboff ) and (#Experimenttwo [14] |= $Esrrbon));
+not((#Experimenttwo[14] |= $Esrrboff ) and (#Experimenttwo [15] |= $Esrrbon));
+not((#Experimenttwo[15] |= $Esrrboff ) and (#Experimenttwo [16] |= $Esrrbon));
+not((#Experimenttwo[16] |= $Esrrboff ) and (#Experimenttwo [17] |= $Esrrbon));
+not((#Experimenttwo[17] |= $Esrrboff ) and (#Experimenttwo [18] |= $Esrrbon));
+not((#Experimenttwo[18] |= $Esrrboff ) and (#Experimenttwo [19] |= $Esrrbon));
+
+not((#Experimenttwo[1] |= $Tfcp2l1off ) and (#Experimenttwo [2] |= $Tfcp2l1on));
+not((#Experimenttwo[2] |= $Tfcp2l1off ) and (#Experimenttwo [3] |= $Tfcp2l1on));
+not((#Experimenttwo[3] |= $Tfcp2l1off ) and (#Experimenttwo [4] |= $Tfcp2l1on));
+not((#Experimenttwo[4] |= $Tfcp2l1off ) and (#Experimenttwo [5] |= $Tfcp2l1on));
+not((#Experimenttwo[5] |= $Tfcp2l1off ) and (#Experimenttwo [6] |= $Tfcp2l1on));
+not((#Experimenttwo[6] |= $Tfcp2l1off ) and (#Experimenttwo [7] |= $Tfcp2l1on));
+not((#Experimenttwo[7] |= $Tfcp2l1off ) and (#Experimenttwo [8] |= $Tfcp2l1on));
+not((#Experimenttwo[8] |= $Tfcp2l1off ) and (#Experimenttwo [9] |= $Tfcp2l1on));
+not((#Experimenttwo[9] |= $Tfcp2l1off ) and (#Experimenttwo [10] |= $Tfcp2l1on));
+not((#Experimenttwo[10] |= $Tfcp2l1off ) and (#Experimenttwo [11] |= $Tfcp2l1on));
+not((#Experimenttwo[11] |= $Tfcp2l1off ) and (#Experimenttwo [12] |= $Tfcp2l1on));
+not((#Experimenttwo[12] |= $Tfcp2l1off ) and (#Experimenttwo [13] |= $Tfcp2l1on));
+not((#Experimenttwo[13] |= $Tfcp2l1off ) and (#Experimenttwo [14] |= $Tfcp2l1on));
+not((#Experimenttwo[14] |= $Tfcp2l1off ) and (#Experimenttwo [15] |= $Tfcp2l1on));
+not((#Experimenttwo[15] |= $Tfcp2l1off ) and (#Experimenttwo [16] |= $Tfcp2l1on));
+not((#Experimenttwo[16] |= $Tfcp2l1off ) and (#Experimenttwo [17] |= $Tfcp2l1on));
+not((#Experimenttwo[17] |= $Tfcp2l1off ) and (#Experimenttwo [18] |= $Tfcp2l1on));
+not((#Experimenttwo[18] |= $Tfcp2l1off ) and (#Experimenttwo [19] |= $Tfcp2l1on));
+
+not((#Experimenttwo[1] |= $Tbx3off ) and (#Experimenttwo [2] |= $Tbx3on));
+not((#Experimenttwo[2] |= $Tbx3off ) and (#Experimenttwo [3] |= $Tbx3on));
+not((#Experimenttwo[3] |= $Tbx3off ) and (#Experimenttwo [4] |= $Tbx3on));
+not((#Experimenttwo[4] |= $Tbx3off ) and (#Experimenttwo [5] |= $Tbx3on));
+not((#Experimenttwo[5] |= $Tbx3off ) and (#Experimenttwo [6] |= $Tbx3on));
+not((#Experimenttwo[6] |= $Tbx3off ) and (#Experimenttwo [7] |= $Tbx3on));
+not((#Experimenttwo[7] |= $Tbx3off ) and (#Experimenttwo [8] |= $Tbx3on));
+not((#Experimenttwo[8] |= $Tbx3off ) and (#Experimenttwo [9] |= $Tbx3on));
+not((#Experimenttwo[9] |= $Tbx3off ) and (#Experimenttwo [10] |= $Tbx3on));
+not((#Experimenttwo[10] |= $Tbx3off ) and (#Experimenttwo [11] |= $Tbx3on));
+not((#Experimenttwo[11] |= $Tbx3off ) and (#Experimenttwo [12] |= $Tbx3on));
+not((#Experimenttwo[12] |= $Tbx3off ) and (#Experimenttwo [13] |= $Tbx3on));
+not((#Experimenttwo[13] |= $Tbx3off ) and (#Experimenttwo [14] |= $Tbx3on));
+not((#Experimenttwo[14] |= $Tbx3off ) and (#Experimenttwo [15] |= $Tbx3on));
+not((#Experimenttwo[15] |= $Tbx3off ) and (#Experimenttwo [16] |= $Tbx3on));
+not((#Experimenttwo[16] |= $Tbx3off ) and (#Experimenttwo [17] |= $Tbx3on));
+not((#Experimenttwo[17] |= $Tbx3off ) and (#Experimenttwo [18] |= $Tbx3on));
+not((#Experimenttwo[18] |= $Tbx3off ) and (#Experimenttwo [19] |= $Tbx3on));
+
+not((#Experimenttwo[1] |= $Nanogoff ) and (#Experimenttwo [2] |= $Nanogon));
+not((#Experimenttwo[2] |= $Nanogoff ) and (#Experimenttwo [3] |= $Nanogon));
+not((#Experimenttwo[3] |= $Nanogoff ) and (#Experimenttwo [4] |= $Nanogon));
+not((#Experimenttwo[4] |= $Nanogoff ) and (#Experimenttwo [5] |= $Nanogon));
+not((#Experimenttwo[5] |= $Nanogoff ) and (#Experimenttwo [6] |= $Nanogon));
+not((#Experimenttwo[6] |= $Nanogoff ) and (#Experimenttwo [7] |= $Nanogon));
+not((#Experimenttwo[7] |= $Nanogoff ) and (#Experimenttwo [8] |= $Nanogon));
+not((#Experimenttwo[8] |= $Nanogoff ) and (#Experimenttwo [9] |= $Nanogon));
+not((#Experimenttwo[9] |= $Nanogoff ) and (#Experimenttwo [10] |= $Nanogon));
+not((#Experimenttwo[10] |= $Nanogoff ) and (#Experimenttwo [11] |= $Nanogon));
+not((#Experimenttwo[11] |= $Nanogoff ) and (#Experimenttwo [12] |= $Nanogon));
+not((#Experimenttwo[12] |= $Nanogoff ) and (#Experimenttwo [13] |= $Nanogon));
+not((#Experimenttwo[13] |= $Nanogoff ) and (#Experimenttwo [14] |= $Nanogon));
+not((#Experimenttwo[14] |= $Nanogoff ) and (#Experimenttwo [15] |= $Nanogon));
+not((#Experimenttwo[15] |= $Nanogoff ) and (#Experimenttwo [16] |= $Nanogon));
+not((#Experimenttwo[16] |= $Nanogoff ) and (#Experimenttwo [17] |= $Nanogon));
+not((#Experimenttwo[17] |= $Nanogoff ) and (#Experimenttwo [18] |= $Nanogon));
+not((#Experimenttwo[18] |= $Nanogoff ) and (#Experimenttwo [19] |= $Nanogon));
+
+not((#Experimenttwo[1] |= $Sall4off ) and (#Experimenttwo [2] |= $Sall4on));
+not((#Experimenttwo[2] |= $Sall4off ) and (#Experimenttwo [3] |= $Sall4on));
+not((#Experimenttwo[3] |= $Sall4off ) and (#Experimenttwo [4] |= $Sall4on));
+not((#Experimenttwo[4] |= $Sall4off ) and (#Experimenttwo [5] |= $Sall4on));
+not((#Experimenttwo[5] |= $Sall4off ) and (#Experimenttwo [6] |= $Sall4on));
+not((#Experimenttwo[6] |= $Sall4off ) and (#Experimenttwo [7] |= $Sall4on));
+not((#Experimenttwo[7] |= $Sall4off ) and (#Experimenttwo [8] |= $Sall4on));
+not((#Experimenttwo[8] |= $Sall4off ) and (#Experimenttwo [9] |= $Sall4on));
+not((#Experimenttwo[9] |= $Sall4off ) and (#Experimenttwo [10] |= $Sall4on));
+not((#Experimenttwo[10] |= $Sall4off ) and (#Experimenttwo [11] |= $Sall4on));
+not((#Experimenttwo[11] |= $Sall4off ) and (#Experimenttwo [12] |= $Sall4on));
+not((#Experimenttwo[12] |= $Sall4off ) and (#Experimenttwo [13] |= $Sall4on));
+not((#Experimenttwo[13] |= $Sall4off ) and (#Experimenttwo [14] |= $Sall4on));
+not((#Experimenttwo[14] |= $Sall4off ) and (#Experimenttwo [15] |= $Sall4on));
+not((#Experimenttwo[15] |= $Sall4off ) and (#Experimenttwo [16] |= $Sall4on));
+not((#Experimenttwo[16] |= $Sall4off ) and (#Experimenttwo [17] |= $Sall4on));
+not((#Experimenttwo[17] |= $Sall4off ) and (#Experimenttwo [18] |= $Sall4on));
+not((#Experimenttwo[18] |= $Sall4off ) and (#Experimenttwo [19] |= $Sall4on));
+
+not((#Experimenttwo[1] |= $Oct4off ) and (#Experimenttwo [2] |= $Oct4on));
+not((#Experimenttwo[2] |= $Oct4off ) and (#Experimenttwo [3] |= $Oct4on));
+not((#Experimenttwo[3] |= $Oct4off ) and (#Experimenttwo [4] |= $Oct4on));
+not((#Experimenttwo[4] |= $Oct4off ) and (#Experimenttwo [5] |= $Oct4on));
+not((#Experimenttwo[5] |= $Oct4off ) and (#Experimenttwo [6] |= $Oct4on));
+not((#Experimenttwo[6] |= $Oct4off ) and (#Experimenttwo [7] |= $Oct4on));
+not((#Experimenttwo[7] |= $Oct4off ) and (#Experimenttwo [8] |= $Oct4on));
+not((#Experimenttwo[8] |= $Oct4off ) and (#Experimenttwo [9] |= $Oct4on));
+not((#Experimenttwo[9] |= $Oct4off ) and (#Experimenttwo [10] |= $Oct4on));
+not((#Experimenttwo[10] |= $Oct4off ) and (#Experimenttwo [11] |= $Oct4on));
+not((#Experimenttwo[11] |= $Oct4off ) and (#Experimenttwo [12] |= $Oct4on));
+not((#Experimenttwo[12] |= $Oct4off ) and (#Experimenttwo [13] |= $Oct4on));
+not((#Experimenttwo[13] |= $Oct4off ) and (#Experimenttwo [14] |= $Oct4on));
+not((#Experimenttwo[14] |= $Oct4off ) and (#Experimenttwo [15] |= $Oct4on));
+not((#Experimenttwo[15] |= $Oct4off ) and (#Experimenttwo [16] |= $Oct4on));
+not((#Experimenttwo[16] |= $Oct4off ) and (#Experimenttwo [17] |= $Oct4on));
+not((#Experimenttwo[17] |= $Oct4off ) and (#Experimenttwo [18] |= $Oct4on));
+not((#Experimenttwo[18] |= $Oct4off ) and (#Experimenttwo [19] |= $Oct4on));
+
+
+
+
+
+(#Experimenttwo[1] |=  $Pluri48off) and (#Experimenttwo[2] |=  $Pluri48off) and (#Experimenttwo[3] |=  $Pluri48off) and (#Experimenttwo[4] |=  $Pluri48off) and (#Experimenttwo[5] |=  $Pluri48off) and (#Experimenttwo[6] |=  $Pluri48off) and (#Experimenttwo[7] |=  $Pluri48off) and (#Experimenttwo[8] |=  $Pluri48off) and (#Experimenttwo[9] |=  $Pluri48off) and (#Experimenttwo[10] |=  $Pluri48off) and (#Experimenttwo[11] |=  $Pluri48off) and (#Experimenttwo[12] |=  $Pluri48off) and (#Experimenttwo[13] |=  $Pluri48off) and (#Experimenttwo[14] |=  $Pluri48off) and (#Experimenttwo[15] |=  $Pluri48off) and (#Experimenttwo[16] |=  $Pluri48off) and (#Experimenttwo[17] |=  $Pluri48off) and (#Experimenttwo[18] |=  $Pluri48off) and (#Experimenttwo[19] |=  $Pluri48off);
+(#Experimenttwo[1] |=  $TwoiPlusLif96hours) or (#Experimenttwo[2] |=  $TwoiPlusLif96hours) or (#Experimenttwo[3] |=  $TwoiPlusLif96hours) or (#Experimenttwo[4] |=  $TwoiPlusLif96hours) or (#Experimenttwo[5] |=  $TwoiPlusLif96hours) or (#Experimenttwo[6] |=  $TwoiPlusLif96hours) or (#Experimenttwo[7] |=  $TwoiPlusLif96hours) or (#Experimenttwo[8] |=  $TwoiPlusLif96hours) or (#Experimenttwo[9] |=  $TwoiPlusLif96hours) or (#Experimenttwo[10] |=  $TwoiPlusLif96hours) or (#Experimenttwo[11] |=  $TwoiPlusLif96hours) or (#Experimenttwo[12] |=  $TwoiPlusLif96hours) or (#Experimenttwo[13] |=  $TwoiPlusLif96hours) or (#Experimenttwo[14] |=  $TwoiPlusLif96hours) or (#Experimenttwo[15] |=  $TwoiPlusLif96hours) or (#Experimenttwo[16] |=  $TwoiPlusLif96hours) or (#Experimenttwo[17] |=  $TwoiPlusLif96hours) or(#Experimenttwo[18] |=  $TwoiPlusLif96hours) or (#Experimenttwo[19] |=  $TwoiPlusLif96hours); 
+#Experimenttwo[20] |=  $EndRemainOff;
+#Experimenttwo[21] |=  $EndRemainOff;
+#Experimenttwo[22] |=  $EndRemainOff;
+#Experimenttwo[23] |=  $EndRemainOff;
+#Experimenttwo[24] |=  $EndRemainOff;
+#Experimenttwo[25] |=  $EndRemainOff;
+
+#Experimentnine[0] |= $TwoilEsrrbKnockout;
+#Experimentnine[0] |= $NoSignalCultureConditions;
+#Experimentnine[0] |= $EsrrbGeneKnockDown;
+#Experimentnine[0] |= $NoOverExpression;
+
+
+
+
+
+not((#Experimentnine[1] |= $Sox2off ) and (#Experimentnine [2] |= $Sox2on));
+not((#Experimentnine[2] |= $Sox2off ) and (#Experimentnine [3] |= $Sox2on));
+not((#Experimentnine[3] |= $Sox2off ) and (#Experimentnine [4] |= $Sox2on));
+not((#Experimentnine[4] |= $Sox2off ) and (#Experimentnine [5] |= $Sox2on));
+not((#Experimentnine[5] |= $Sox2off ) and (#Experimentnine [6] |= $Sox2on));
+not((#Experimentnine[6] |= $Sox2off ) and (#Experimentnine [7] |= $Sox2on));
+not((#Experimentnine[7] |= $Sox2off ) and (#Experimentnine [8] |= $Sox2on));
+not((#Experimentnine[8] |= $Sox2off ) and (#Experimentnine [9] |= $Sox2on));
+not((#Experimentnine[9] |= $Sox2off ) and (#Experimentnine [10] |= $Sox2on));
+not((#Experimentnine[10] |= $Sox2off ) and (#Experimentnine [11] |= $Sox2on));
+not((#Experimentnine[11] |= $Sox2off ) and (#Experimentnine [12] |= $Sox2on));
+not((#Experimentnine[12] |= $Sox2off ) and (#Experimentnine [13] |= $Sox2on));
+not((#Experimentnine[13] |= $Sox2off ) and (#Experimentnine [14] |= $Sox2on));
+not((#Experimentnine[14] |= $Sox2off ) and (#Experimentnine [15] |= $Sox2on));
+not((#Experimentnine[15] |= $Sox2off ) and (#Experimentnine [16] |= $Sox2on));
+not((#Experimentnine[16] |= $Sox2off ) and (#Experimentnine [17] |= $Sox2on));
+not((#Experimentnine[17] |= $Sox2off ) and (#Experimentnine [18] |= $Sox2on));
+not((#Experimentnine[18] |= $Sox2off ) and (#Experimentnine [19] |= $Sox2on));
+
+not((#Experimentnine[1] |= $Klf4off ) and (#Experimentnine [2] |= $Klf4on));
+not((#Experimentnine[2] |= $Klf4off ) and (#Experimentnine [3] |= $Klf4on));
+not((#Experimentnine[3] |= $Klf4off ) and (#Experimentnine [4] |= $Klf4on));
+not((#Experimentnine[4] |= $Klf4off ) and (#Experimentnine [5] |= $Klf4on));
+not((#Experimentnine[5] |= $Klf4off ) and (#Experimentnine [6] |= $Klf4on));
+not((#Experimentnine[6] |= $Klf4off ) and (#Experimentnine [7] |= $Klf4on));
+not((#Experimentnine[7] |= $Klf4off ) and (#Experimentnine [8] |= $Klf4on));
+not((#Experimentnine[8] |= $Klf4off ) and (#Experimentnine [9] |= $Klf4on));
+not((#Experimentnine[9] |= $Klf4off ) and (#Experimentnine [10] |= $Klf4on));
+not((#Experimentnine[10] |= $Klf4off ) and (#Experimentnine [11] |= $Klf4on));
+not((#Experimentnine[11] |= $Klf4off ) and (#Experimentnine [12] |= $Klf4on));
+not((#Experimentnine[12] |= $Klf4off ) and (#Experimentnine [13] |= $Klf4on));
+not((#Experimentnine[13] |= $Klf4off ) and (#Experimentnine [14] |= $Klf4on));
+not((#Experimentnine[14] |= $Klf4off ) and (#Experimentnine [15] |= $Klf4on));
+not((#Experimentnine[15] |= $Klf4off ) and (#Experimentnine [16] |= $Klf4on));
+not((#Experimentnine[16] |= $Klf4off ) and (#Experimentnine [17] |= $Klf4on));
+not((#Experimentnine[17] |= $Klf4off ) and (#Experimentnine [18] |= $Klf4on));
+not((#Experimentnine[18] |= $Klf4off ) and (#Experimentnine [19] |= $Klf4on));
+
+
+not((#Experimentnine[1] |= $Klf2off ) and (#Experimentnine [2] |= $Klf2on));
+not((#Experimentnine[2] |= $Klf2off ) and (#Experimentnine [3] |= $Klf2on));
+not((#Experimentnine[3] |= $Klf2off ) and (#Experimentnine [4] |= $Klf2on));
+not((#Experimentnine[4] |= $Klf2off ) and (#Experimentnine [5] |= $Klf2on));
+not((#Experimentnine[5] |= $Klf2off ) and (#Experimentnine [6] |= $Klf2on));
+not((#Experimentnine[6] |= $Klf2off ) and (#Experimentnine [7] |= $Klf2on));
+not((#Experimentnine[7] |= $Klf2off ) and (#Experimentnine [8] |= $Klf2on));
+not((#Experimentnine[8] |= $Klf2off ) and (#Experimentnine [9] |= $Klf2on));
+not((#Experimentnine[9] |= $Klf2off ) and (#Experimentnine [10] |= $Klf2on));
+not((#Experimentnine[10] |= $Klf2off ) and (#Experimentnine [11] |= $Klf2on));
+not((#Experimentnine[11] |= $Klf2off ) and (#Experimentnine [12] |= $Klf2on));
+not((#Experimentnine[12] |= $Klf2off ) and (#Experimentnine [13] |= $Klf2on));
+not((#Experimentnine[13] |= $Klf2off ) and (#Experimentnine [14] |= $Klf2on));
+not((#Experimentnine[14] |= $Klf2off ) and (#Experimentnine [15] |= $Klf2on));
+not((#Experimentnine[15] |= $Klf2off ) and (#Experimentnine [16] |= $Klf2on));
+not((#Experimentnine[16] |= $Klf2off ) and (#Experimentnine [17] |= $Klf2on));
+not((#Experimentnine[17] |= $Klf2off ) and (#Experimentnine [18] |= $Klf2on));
+not((#Experimentnine[18] |= $Klf2off ) and (#Experimentnine [19] |= $Klf2on));
+
+
+not((#Experimentnine[1] |= $Esrrboff ) and (#Experimentnine [2] |= $Esrrbon));
+not((#Experimentnine[2] |= $Esrrboff ) and (#Experimentnine [3] |= $Esrrbon));
+not((#Experimentnine[3] |= $Esrrboff ) and (#Experimentnine [4] |= $Esrrbon));
+not((#Experimentnine[4] |= $Esrrboff ) and (#Experimentnine [5] |= $Esrrbon));
+not((#Experimentnine[5] |= $Esrrboff ) and (#Experimentnine [6] |= $Esrrbon));
+not((#Experimentnine[6] |= $Esrrboff ) and (#Experimentnine [7] |= $Esrrbon));
+not((#Experimentnine[7] |= $Esrrboff ) and (#Experimentnine [8] |= $Esrrbon));
+not((#Experimentnine[8] |= $Esrrboff ) and (#Experimentnine [9] |= $Esrrbon));
+not((#Experimentnine[9] |= $Esrrboff ) and (#Experimentnine [10] |= $Esrrbon));
+not((#Experimentnine[10] |= $Esrrboff ) and (#Experimentnine [11] |= $Esrrbon));
+not((#Experimentnine[11] |= $Esrrboff ) and (#Experimentnine [12] |= $Esrrbon));
+not((#Experimentnine[12] |= $Esrrboff ) and (#Experimentnine [13] |= $Esrrbon));
+not((#Experimentnine[13] |= $Esrrboff ) and (#Experimentnine [14] |= $Esrrbon));
+not((#Experimentnine[14] |= $Esrrboff ) and (#Experimentnine [15] |= $Esrrbon));
+not((#Experimentnine[15] |= $Esrrboff ) and (#Experimentnine [16] |= $Esrrbon));
+not((#Experimentnine[16] |= $Esrrboff ) and (#Experimentnine [17] |= $Esrrbon));
+not((#Experimentnine[17] |= $Esrrboff ) and (#Experimentnine [18] |= $Esrrbon));
+not((#Experimentnine[18] |= $Esrrboff ) and (#Experimentnine [19] |= $Esrrbon));
+
+not((#Experimentnine[1] |= $Tfcp2l1off ) and (#Experimentnine [2] |= $Tfcp2l1on));
+not((#Experimentnine[2] |= $Tfcp2l1off ) and (#Experimentnine [3] |= $Tfcp2l1on));
+not((#Experimentnine[3] |= $Tfcp2l1off ) and (#Experimentnine [4] |= $Tfcp2l1on));
+not((#Experimentnine[4] |= $Tfcp2l1off ) and (#Experimentnine [5] |= $Tfcp2l1on));
+not((#Experimentnine[5] |= $Tfcp2l1off ) and (#Experimentnine [6] |= $Tfcp2l1on));
+not((#Experimentnine[6] |= $Tfcp2l1off ) and (#Experimentnine [7] |= $Tfcp2l1on));
+not((#Experimentnine[7] |= $Tfcp2l1off ) and (#Experimentnine [8] |= $Tfcp2l1on));
+not((#Experimentnine[8] |= $Tfcp2l1off ) and (#Experimentnine [9] |= $Tfcp2l1on));
+not((#Experimentnine[9] |= $Tfcp2l1off ) and (#Experimentnine [10] |= $Tfcp2l1on));
+not((#Experimentnine[10] |= $Tfcp2l1off ) and (#Experimentnine [11] |= $Tfcp2l1on));
+not((#Experimentnine[11] |= $Tfcp2l1off ) and (#Experimentnine [12] |= $Tfcp2l1on));
+not((#Experimentnine[12] |= $Tfcp2l1off ) and (#Experimentnine [13] |= $Tfcp2l1on));
+not((#Experimentnine[13] |= $Tfcp2l1off ) and (#Experimentnine [14] |= $Tfcp2l1on));
+not((#Experimentnine[14] |= $Tfcp2l1off ) and (#Experimentnine [15] |= $Tfcp2l1on));
+not((#Experimentnine[15] |= $Tfcp2l1off ) and (#Experimentnine [16] |= $Tfcp2l1on));
+not((#Experimentnine[16] |= $Tfcp2l1off ) and (#Experimentnine [17] |= $Tfcp2l1on));
+not((#Experimentnine[17] |= $Tfcp2l1off ) and (#Experimentnine [18] |= $Tfcp2l1on));
+not((#Experimentnine[18] |= $Tfcp2l1off ) and (#Experimentnine [19] |= $Tfcp2l1on));
+
+not((#Experimentnine[1] |= $Tbx3off ) and (#Experimentnine [2] |= $Tbx3on));
+not((#Experimentnine[2] |= $Tbx3off ) and (#Experimentnine [3] |= $Tbx3on));
+not((#Experimentnine[3] |= $Tbx3off ) and (#Experimentnine [4] |= $Tbx3on));
+not((#Experimentnine[4] |= $Tbx3off ) and (#Experimentnine [5] |= $Tbx3on));
+not((#Experimentnine[5] |= $Tbx3off ) and (#Experimentnine [6] |= $Tbx3on));
+not((#Experimentnine[6] |= $Tbx3off ) and (#Experimentnine [7] |= $Tbx3on));
+not((#Experimentnine[7] |= $Tbx3off ) and (#Experimentnine [8] |= $Tbx3on));
+not((#Experimentnine[8] |= $Tbx3off ) and (#Experimentnine [9] |= $Tbx3on));
+not((#Experimentnine[9] |= $Tbx3off ) and (#Experimentnine [10] |= $Tbx3on));
+not((#Experimentnine[10] |= $Tbx3off ) and (#Experimentnine [11] |= $Tbx3on));
+not((#Experimentnine[11] |= $Tbx3off ) and (#Experimentnine [12] |= $Tbx3on));
+not((#Experimentnine[12] |= $Tbx3off ) and (#Experimentnine [13] |= $Tbx3on));
+not((#Experimentnine[13] |= $Tbx3off ) and (#Experimentnine [14] |= $Tbx3on));
+not((#Experimentnine[14] |= $Tbx3off ) and (#Experimentnine [15] |= $Tbx3on));
+not((#Experimentnine[15] |= $Tbx3off ) and (#Experimentnine [16] |= $Tbx3on));
+not((#Experimentnine[16] |= $Tbx3off ) and (#Experimentnine [17] |= $Tbx3on));
+not((#Experimentnine[17] |= $Tbx3off ) and (#Experimentnine [18] |= $Tbx3on));
+not((#Experimentnine[18] |= $Tbx3off ) and (#Experimentnine [19] |= $Tbx3on));
+
+not((#Experimentnine[1] |= $Nanogoff ) and (#Experimentnine [2] |= $Nanogon));
+not((#Experimentnine[2] |= $Nanogoff ) and (#Experimentnine [3] |= $Nanogon));
+not((#Experimentnine[3] |= $Nanogoff ) and (#Experimentnine [4] |= $Nanogon));
+not((#Experimentnine[4] |= $Nanogoff ) and (#Experimentnine [5] |= $Nanogon));
+not((#Experimentnine[5] |= $Nanogoff ) and (#Experimentnine [6] |= $Nanogon));
+not((#Experimentnine[6] |= $Nanogoff ) and (#Experimentnine [7] |= $Nanogon));
+not((#Experimentnine[7] |= $Nanogoff ) and (#Experimentnine [8] |= $Nanogon));
+not((#Experimentnine[8] |= $Nanogoff ) and (#Experimentnine [9] |= $Nanogon));
+not((#Experimentnine[9] |= $Nanogoff ) and (#Experimentnine [10] |= $Nanogon));
+not((#Experimentnine[10] |= $Nanogoff ) and (#Experimentnine [11] |= $Nanogon));
+not((#Experimentnine[11] |= $Nanogoff ) and (#Experimentnine [12] |= $Nanogon));
+not((#Experimentnine[12] |= $Nanogoff ) and (#Experimentnine [13] |= $Nanogon));
+not((#Experimentnine[13] |= $Nanogoff ) and (#Experimentnine [14] |= $Nanogon));
+not((#Experimentnine[14] |= $Nanogoff ) and (#Experimentnine [15] |= $Nanogon));
+not((#Experimentnine[15] |= $Nanogoff ) and (#Experimentnine [16] |= $Nanogon));
+not((#Experimentnine[16] |= $Nanogoff ) and (#Experimentnine [17] |= $Nanogon));
+not((#Experimentnine[17] |= $Nanogoff ) and (#Experimentnine [18] |= $Nanogon));
+not((#Experimentnine[18] |= $Nanogoff ) and (#Experimentnine [19] |= $Nanogon));
+
+not((#Experimentnine[1] |= $Sall4off ) and (#Experimentnine [2] |= $Sall4on));
+not((#Experimentnine[2] |= $Sall4off ) and (#Experimentnine [3] |= $Sall4on));
+not((#Experimentnine[3] |= $Sall4off ) and (#Experimentnine [4] |= $Sall4on));
+not((#Experimentnine[4] |= $Sall4off ) and (#Experimentnine [5] |= $Sall4on));
+not((#Experimentnine[5] |= $Sall4off ) and (#Experimentnine [6] |= $Sall4on));
+not((#Experimentnine[6] |= $Sall4off ) and (#Experimentnine [7] |= $Sall4on));
+not((#Experimentnine[7] |= $Sall4off ) and (#Experimentnine [8] |= $Sall4on));
+not((#Experimentnine[8] |= $Sall4off ) and (#Experimentnine [9] |= $Sall4on));
+not((#Experimentnine[9] |= $Sall4off ) and (#Experimentnine [10] |= $Sall4on));
+not((#Experimentnine[10] |= $Sall4off ) and (#Experimentnine [11] |= $Sall4on));
+not((#Experimentnine[11] |= $Sall4off ) and (#Experimentnine [12] |= $Sall4on));
+not((#Experimentnine[12] |= $Sall4off ) and (#Experimentnine [13] |= $Sall4on));
+not((#Experimentnine[13] |= $Sall4off ) and (#Experimentnine [14] |= $Sall4on));
+not((#Experimentnine[14] |= $Sall4off ) and (#Experimentnine [15] |= $Sall4on));
+not((#Experimentnine[15] |= $Sall4off ) and (#Experimentnine [16] |= $Sall4on));
+not((#Experimentnine[16] |= $Sall4off ) and (#Experimentnine [17] |= $Sall4on));
+not((#Experimentnine[17] |= $Sall4off ) and (#Experimentnine [18] |= $Sall4on));
+not((#Experimentnine[18] |= $Sall4off ) and (#Experimentnine [19] |= $Sall4on));
+
+not((#Experimentnine[1] |= $Oct4off ) and (#Experimentnine [2] |= $Oct4on));
+not((#Experimentnine[2] |= $Oct4off ) and (#Experimentnine [3] |= $Oct4on));
+not((#Experimentnine[3] |= $Oct4off ) and (#Experimentnine [4] |= $Oct4on));
+not((#Experimentnine[4] |= $Oct4off ) and (#Experimentnine [5] |= $Oct4on));
+not((#Experimentnine[5] |= $Oct4off ) and (#Experimentnine [6] |= $Oct4on));
+not((#Experimentnine[6] |= $Oct4off ) and (#Experimentnine [7] |= $Oct4on));
+not((#Experimentnine[7] |= $Oct4off ) and (#Experimentnine [8] |= $Oct4on));
+not((#Experimentnine[8] |= $Oct4off ) and (#Experimentnine [9] |= $Oct4on));
+not((#Experimentnine[9] |= $Oct4off ) and (#Experimentnine [10] |= $Oct4on));
+not((#Experimentnine[10] |= $Oct4off ) and (#Experimentnine [11] |= $Oct4on));
+not((#Experimentnine[11] |= $Oct4off ) and (#Experimentnine [12] |= $Oct4on));
+not((#Experimentnine[12] |= $Oct4off ) and (#Experimentnine [13] |= $Oct4on));
+not((#Experimentnine[13] |= $Oct4off ) and (#Experimentnine [14] |= $Oct4on));
+not((#Experimentnine[14] |= $Oct4off ) and (#Experimentnine [15] |= $Oct4on));
+not((#Experimentnine[15] |= $Oct4off ) and (#Experimentnine [16] |= $Oct4on));
+not((#Experimentnine[16] |= $Oct4off ) and (#Experimentnine [17] |= $Oct4on));
+not((#Experimentnine[17] |= $Oct4off ) and (#Experimentnine [18] |= $Oct4on));
+not((#Experimentnine[18] |= $Oct4off ) and (#Experimentnine [19] |= $Oct4on));
+
+
+
+
+
+
+
+
+
+
+
+(#Experimentnine[1] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[2] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[3] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[4] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[5] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[6] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[7] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[8] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[9] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[10] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[11] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[12] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[13] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[14] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[15] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[16] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[17] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[18] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[19] |=  $TwoilEsrrbKnockout48hours) or (#Experimentnine[20] |=  $TwoilEsrrbKnockout48hours);
+#Experimentnine[21] |=  $everythingRemainOff;
+#Experimentnine[22] |=  $everythingRemainOff;
+#Experimentnine[23] |=  $everythingRemainOff;
+#Experimentnine[24] |=  $everythingRemainOff;
+#Experimentnine[25] |=  $everythingRemainOff;
+
+(#Experimentnine[1] |=  $formativeoff) and (#Experimentnine[2] |=  $formativeoff) and (#Experimentnine[3] |=  $formativeoff) and (#Experimentnine[4] |=  $formativeoff) and (#Experimentnine[5] |=  $formativeoff) and (#Experimentnine[6] |=  $formativeoff) and (#Experimentnine[7] |=  $formativeoff) and (#Experimentnine[8] |=  $formativeoff) and (#Experimentnine[9] |=  $formativeoff) and (#Experimentnine[10] |=  $formativeoff) and (#Experimentnine[11] |=  $formativeoff) and (#Experimentnine[12] |=  $formativeoff) and (#Experimentnine[13] |=  $formativeoff) and (#Experimentnine[14] |=  $formativeoff) and (#Experimentnine[15] |= $formativeoff) and (#Experimentnine[16] |=  $formativeoff) and (#Experimentnine[17] |=  $formativeoff) and (#Experimentnine[18] |=  $formativeoff) and (#Experimentnine[19] |=  $formativeoff) and (#Experimentnine[20] |=  $formativeoff);
+
+$Pluri48off:=
+{
+ Klf4 = 0 and
+ Klf2 = 0 and
+ Esrrb = 0 and
+ Tfcp2l1 = 0 and
+ Tbx3 = 0 and
+ Nanog = 0 
+};
+$Otx2on:=
+{
+ Otx2= 1
+ };
+ $Otx2off:=
+{
+ Otx2= 0
+ };
+
+$Sox2on:=
+{
+ Sox2= 1
+ };
+ $Sox2off:=
+{
+ Sox2= 0
+ };
+ $Klf4on:=
+{
+ Klf4= 1
+ };
+ $Klf4off:=
+{
+ Klf4= 0
+ };
+ $Klf2on:=
+{
+ Klf2= 1
+ };
+ $Klf2off:=
+{
+ Klf2= 0
+ };
+ $Esrrbon:=
+{
+ Esrrb= 1
+ };
+ $Esrrboff:=
+{
+ Esrrb= 0
+ };
+ $Tfcp2l1on:=
+{
+ Tfcp2l1= 1
+ };
+ $Tfcp2l1off:=
+{
+ Tfcp2l1= 0
+ };
+ $Tbx3on:=
+{
+ Tbx3= 1
+ };
+ $Tbx3off:=
+{
+ Tbx3= 0
+ };
+ $Nanogon:=
+{
+ Nanog= 1
+ };
+ $Nanogoff:=
+{
+ Nanog= 0
+ };
+ $Sall4on:=
+{
+ Sall4= 1
+ };
+ $Sall4off:=
+{
+ Sall4= 0
+ };
+ $Oct4on:=
+{
+ Oct4= 1
+ };
+ $Oct4off:=
+{
+ Oct4= 0
+ };
+ 
+$Oct6on:=
+{
+ Oct6= 1
+ };
+ $Oct6off:=
+{
+ Oct6= 0
+ };
+ $formativeoff:=
+{
+ Otx2 = 0 and
+ Lef1 = 0 and
+ Utf1 = 0 and
+ Dnmt3b = 0
+ };
+ 
+ 
+ $everythingRemainOff:=
+{
+ Klf4 = 0 and
+ Klf2 = 0 and 
+ Esrrb = 0 and
+ Tfcp2l1 = 0 and
+ Tbx3 = 0 and
+ Stat3 = 0 and
+ Nanog = 0 and
+ Sall4 = 0 and
+ Oct4 = 0 and
+ Sox2 = 0 and
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Utf1 = 0 and
+ Otx2 = 0 and
+ Etv5 = 0 and
+ Lef1 = 0 and
+ Tcf15 = 0 and
+ Gbx2 = 0 and
+ Oct6 = 0 
+ 
+};
+
+
+$TwoilEsrrbKnockout48hours:=
+{
+ MEKERK = 1 and
+ Klf4 = 0 and
+ Klf2 = 0 and 
+ Esrrb = 0 and
+ Tfcp2l1 = 0 and
+ Tbx3 = 0 and
+ Stat3 = 1 and
+ Tcf3 = 1 and
+ Nanog = 0 and
+ Sall4 = 1 and
+ Oct4 = 1 and
+ Sox2 = 1 and
+ Dnmt3a = 1 and
+ Dnmt3b = 0 and
+ Utf1 = 0 and
+ Otx2 = 0 and
+ Etv5 =1 and
+ Lef1 = 0 and
+ Tcf15 = 1 and
+ Gbx2 = 0 and
+ Oct6 = 0 
+ 
+};
+
+$EsrrbGeneKnockDown :=
+{
+ KO(Esrrb) = 1 and
+ KO(Tfcp2l1) = 0 and
+ KO(Klf4) = 0 and
+ KO(Klf2) = 0 and
+ KO(Tbx3) = 0 and
+ KO(Sall4) = 0 and
+ KO(Gbx2) = 0 and
+ KO(Nanog) = 0 and
+ KO(Stat3) = 0 and
+ KO(Oct4) = 0 and
+ KO(Sox2) = 0 and
+ KO(Tcf3) = 0
+};
+$TwoilEsrrbKnockout:=
+{
+ MEKERK = 0 and
+ Klf4 = 0 and
+ Klf2 = 1 and 
+ Esrrb = 0 and
+ Tfcp2l1 = 0 and
+ Tbx3 = 0 and
+ Stat3 = 1 and
+ Tcf3 = 0 and
+ Nanog = 1 and
+ Sall4 = 1 and
+ Oct4 = 1 and
+ Sox2 = 0 and
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Utf1 = 0 and
+ Otx2 = 0 and
+ Etv5 =1 and
+ Lef1 = 0 and
+ Tcf15 = 0 and
+ Gbx2 = 1  and
+ Oct6 = 0 
+ 
+};
+
+$TwoiPlusLifformative:=
+{
+ MEKERK = 0 and
+ Klf4 = 1 and
+ Klf2 = 1 and 
+ Esrrb = 1 and
+ Tfcp2l1 = 1 and
+ Tbx3 = 1 and
+ Stat3 = 1 and
+ Tcf3 = 1 and
+ Nanog = 1 and
+ Sall4 = 1 and
+ Oct4 = 1 and
+ Sox2 = 1 and
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Utf1 = 0 and
+ Otx2 = 0 and
+ Etv5 =1 and
+ Lef1 = 0 and
+ Tcf15 = 0 and
+ Gbx2 = 1 and
+ Oct6 = 0 
+};
+
+$NoKnockDowns :=
+{
+ KO(Esrrb) = 0 and
+ KO(Tfcp2l1) = 0 and
+ KO(Klf4) = 0 and
+ KO(Klf2) = 0 and
+ KO(Tbx3) = 0 and
+ KO(Sall4) = 0 and
+ KO(Gbx2) = 0 and
+ KO(Nanog) = 0 and
+ KO(Stat3) = 0 and
+ KO(Oct4) = 0 and
+ KO(Sox2) = 0 and
+ KO(Tcf3) = 0
+};
+
+$NoOverExpression :=
+{
+ FE(Esrrb)=0 and
+ FE(Tfcp2l1)=0 and 
+ FE(Klf4)=0 and
+ FE(Klf2)=0 and
+ FE(Tbx3)=0 and 
+ FE(Sall4)=0 and
+ FE(Gbx2)=0 and
+ FE(Nanog)=0 and
+ FE(Stat3)=0 and
+ FE(Oct4)=0 and
+ FE(Sox2)=0 and
+ FE(Tcf3)=0
+};
+$NoSignalCultureConditions :=
+{
+ LIF = 0 and
+ CH = 0 and 
+ PD = 0
+};
+
+$TwoiPlusLif48hours :=
+{
+ MEKERK = 1 and
+ Klf4 = 0 and
+ Klf2 = 0 and 
+ Esrrb = 0 and
+ Tfcp2l1 = 0 and
+ Tbx3 = 0 and
+ Stat3 = 1 and
+ Tcf3 = 1 and
+ Nanog = 0 and
+ Sall4 = 1 and
+ Oct4 = 1 and
+ Sox2 = 1 and
+ Dnmt3a = 1 and
+ Dnmt3b = 1 and
+ Utf1 = 1 and
+ Otx2 = 1 and
+ Etv5 =1 and
+ Lef1 = 1 and
+ Tcf15 = 1 and
+ Gbx2 = 1
+};
+$PluriRemainOff:=
+{
+ Klf4=0 and
+ Klf2=0 and
+ Esrrb=0 and
+ Tfcp2l1=0 and
+ Tbx3=0 
+};
+
+$TwoiPlusLif96hours :=
+{
+ Klf4 = 0 and
+ Klf2 = 0 and 
+ Esrrb = 0 and
+ Tfcp2l1 = 0 and
+ Tbx3 = 0 and
+ Stat3 = 0 and
+ Tcf3 = 1 and
+ Nanog = 0 and
+ Sall4 = 0 and
+ Oct4 = 0 and
+ Sox2 = 0 and
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Utf1 = 0 and
+ Otx2 = 1 and
+ Etv5 =0 and
+ Lef1 = 0 and
+ Tcf15 = 0 and
+ Gbx2 = 0
+};
+
+$EndRemainOff:=
+{
+ Oct4=0 and
+ Sox2=0 and 
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Utf1=0 and
+ Etv5=0 and
+ Lef1=0 and
+ Tcf15=0 and
+ Gbx2=0 and
+ Oct6 = 0 
+}; 
+ 
