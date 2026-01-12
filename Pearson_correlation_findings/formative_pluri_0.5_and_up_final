@@ -1,0 +1,127 @@
+// Synchronous dynamics 
+directive updates sync;
+
+// Default regulation conditions
+directive regulation default;
+
+
+LIF(0..8); CH(0..8); PD(0..8); Stat3[!](0..8); Tcf3(0..17);
+MEKERK(0..17);	Klf4[!](0..8); Gbx2[!](0..8); Tfcp2l1[!](0..8); Esrrb[!-+](0..8);
+Nanog[!](0..8); Klf2[!](0..8); Tbx3[!](0..8); Sox2[!](0..8); Sall4[!](0..8); Oct4[!](0..8);
+Dnmt3a[!](0..8);Dnmt3b[!](0..8);Utf1[!](0..8);
+Otx2[!](0..8);Etv5[!-](0..8); Oct6[!-](0..8);
+Lef1[!-](0..8);Tcf15[!](0..8); 
+
+  
+LIF		LIF		positive;
+CH		CH		positive;
+PD		PD		positive;
+LIF		Stat3		positive;
+Stat3	Klf4 positive optional;
+Stat3	Gbx2	positive optional; 
+Stat3 Tfcp2l1 positive optional; 
+CH		Tcf3	negative optional;
+Tcf3 	Tfcp2l1 negative optional; 
+Tcf3 	Esrrb	negative optional; 
+PD		MEKERK  negative optional;
+MEKERK	Nanog	negative optional;	
+MEKERK	Tcf3 	negative optional;
+Gbx2 Klf4 positive optional;
+Klf4 Klf2 positive optional;
+Klf4 Tfcp2l1 positive optional;
+Sall4 Klf2 positive optional;
+Tfcp2l1 Sall4 positive optional;
+Tfcp2l1 Esrrb positive optional;
+Oct4 Tfcp2l1 positive optional;
+Oct4 Nanog positive optional;
+Klf2 Oct4 positive optional;
+Nanog Esrrb positive optional;
+Nanog Sox2 positive optional;
+MEKERK Etv5 positive optional;
+Etv5 Oct6 positive optional;
+Etv5 Lef1 positive optional;
+Esrrb Tcf15 positive optional;
+Esrrb Tcf15 negative optional;
+Esrrb Utf1 positive optional;
+Esrrb Utf1 negative optional;
+Esrrb Lef1 positive optional;
+Esrrb Lef1 negative optional;
+Esrrb Dnmt3a positive optional;
+Esrrb Dnmt3a negative optional;
+Esrrb Otx2 positive optional;
+Esrrb Otx2 negative optional;
+Esrrb Etv5 positive optional;
+Esrrb Etv5 negative optional;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dnmt3a Tbx3 negative optional;
+Dnmt3a Nanog negative optional;
+Dnmt3b Klf4 negative optional;
+Dnmt3b Esrrb negative optional;
+Dnmt3b Tbx3 negative optional;
+Dnmt3b Nanog negative optional;
+Dnmt3b Sall4 positive optional;
+Dnmt3b Sox2 negative optional;
+Utf1 Sall4 positive optional;
+Otx2 Tbx3 negative optional;
+Otx2 Nanog negative optional;
+Otx2 Sall4 positive optional;
+Etv5 Klf2 positive optional;
+Etv5 Tcf3 positive optional;
+Etv5 Oct4 positive optional;
+Lef1 Klf4 negative optional;
+Lef1 Esrrb negative optional;
+Lef1 Tfcp2l1 negative optional;
+Lef1 Tbx3 negative optional;
+Lef1 Stat3 negative optional;
+Lef1 Nanog negative optional;
+Lef1 Sox2 negative optional;
+Tcf15 Oct4 positive optional;
+Gbx2 Tcf3 negative optional;
+Oct6 Klf4 negative optional;
+Oct6 Klf2 negative optional;
+Oct6 Esrrb negative optional;
+Oct6 Nanog positive optional;
+Oct6 Sox2 negative optional;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

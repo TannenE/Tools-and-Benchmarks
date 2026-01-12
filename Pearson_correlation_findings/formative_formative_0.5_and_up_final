@@ -1,0 +1,132 @@
+// Synchronous dynamics 
+directive updates sync;
+
+// Default regulation conditions
+directive regulation default;
+
+
+LIF(0..8); CH(0..8); PD(0..8); Stat3[!](0..8); Tcf3(0..17);
+MEKERK(0..17);	Klf4[!](0..8); Gbx2[!](0..8); Tfcp2l1[!](0..8); Esrrb[!-+](0..8);
+Nanog[!](0..8); Klf2[!](0..8); Tbx3[!](0..8); Sox2[!](0..8); Sall4[!](0..8); Oct4[!](0..8);
+Dnmt3a[!](0..8);Dnmt3b[!](0..8);Utf1[!](0..8);
+Otx2[!](0..8);Etv5[!-](0..8); Oct6[!-](0..8);
+Lef1[!-](0..8);Tcf15[!](0..8); 
+
+  
+LIF		LIF		positive;
+CH		CH		positive;
+PD		PD		positive;
+LIF		Stat3		positive;
+Stat3	Klf4 positive optional;
+Stat3	Gbx2	positive optional; 
+Stat3 Tfcp2l1 positive optional; 
+CH		Tcf3	negative optional;
+Tcf3 	Tfcp2l1 negative optional; 
+Tcf3 	Esrrb	negative optional; 
+PD		MEKERK  negative optional;
+MEKERK	Nanog	negative optional;	
+MEKERK	Tcf3 	negative optional;
+Gbx2 Klf4 positive optional;
+Klf4 Klf2 positive optional;
+Klf4 Tfcp2l1 positive optional;
+Sall4 Klf2 positive optional;
+Tfcp2l1 Sall4 positive optional;
+Tfcp2l1 Esrrb positive optional;
+Oct4 Tfcp2l1 positive optional;
+Oct4 Nanog positive optional;
+Klf2 Oct4 positive optional;
+Nanog Esrrb positive optional;
+Nanog Sox2 positive optional;
+MEKERK Etv5 positive optional;
+Etv5 Oct6 positive optional;
+Etv5 Lef1 positive optional;
+Esrrb Tcf15 positive optional;
+Esrrb Tcf15 negative optional;
+Esrrb Utf1 positive optional;
+Esrrb Utf1 negative optional;
+Esrrb Lef1 positive optional;
+Esrrb Lef1 negative optional;
+Esrrb Dnmt3a positive optional;
+Esrrb Dnmt3a negative optional;
+Esrrb Otx2 positive optional;
+Esrrb Otx2 negative optional;
+Esrrb Etv5 positive optional;
+Esrrb Etv5 negative optional;
+
+
+
+
+
+
+
+
+
+
+Dnmt3a Dnmt3b positive optional;
+Dnmt3a Utf1 positive optional;
+Dnmt3a Otx2 positive optional;
+Dnmt3a Lef1 positive optional;
+Dnmt3a Oct6 positive optional;
+Dnmt3b Dnmt3a positive optional;
+Dnmt3b Utf1 positive optional;
+Dnmt3b Otx2 positive optional;
+Dnmt3b Lef1 positive optional;
+Dnmt3b Oct6 positive optional;
+Utf1 Dnmt3a positive optional;
+Utf1 Dnmt3b positive optional;
+Utf1 Otx2 positive optional;
+Utf1 Etv5 positive optional;
+Utf1 Tcf15 positive optional;
+Utf1 Oct6 positive optional;
+Otx2 Dnmt3a positive optional;
+Otx2 Dnmt3b positive optional;
+Otx2 Utf1 positive optional;
+Otx2 Lef1 positive optional;
+Otx2 Oct6 positive optional;
+Etv5 Utf1 positive optional;
+Etv5 Tcf15 positive optional;
+Lef1 Dnmt3a positive optional;
+Lef1 Dnmt3b positive optional;
+Lef1 Utf1 positive optional;
+Lef1 Otx2 positive optional;
+Lef1 Oct6 positive optional;
+Tcf15 Utf1 positive optional;
+Tcf15 Etv5 positive optional;
+Oct6 Dnmt3a positive optional;
+Oct6 Dnmt3b positive optional;
+Oct6 Utf1 positive optional;
+Oct6 Otx2 positive optional;
+Oct6 Lef1 positive optional;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

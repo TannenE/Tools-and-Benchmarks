@@ -1,0 +1,152 @@
+// Synchronous dynamics 
+directive updates sync;
+
+// Default regulation conditions
+directive regulation default;
+
+
+LIF(0..8); CH(0..8); PD(0..8); Stat3[!](0..8); Tcf3(0..17);
+MEKERK(0..17);	Klf4[!](0..8); Gbx2[!](0..8); Tfcp2l1[!](0..8); Esrrb[!-+](0..8);
+Nanog[!](0..8); Klf2[!](0..8); Tbx3[!](0..8); Sox2[!](0..8); Sall4[!](0..8); Oct4[!](0..8);
+Dnmt3a[!](0..8);Dnmt3b[!](0..8);Utf1[!](0..8);
+Otx2[!](0..8);Etv5[!-](0..8); Oct6[!-](0..8);
+Lef1[!-](0..8);Tcf15[!](0..8); 
+
+  
+LIF		LIF		positive;
+CH		CH		positive;
+PD		PD		positive;
+LIF		Stat3		positive;
+Stat3	Klf4 positive optional;
+Stat3	Gbx2	positive optional; 
+Stat3 Tfcp2l1 positive optional; 
+CH		Tcf3	negative optional;
+Tcf3 	Tfcp2l1 negative optional; 
+Tcf3 	Esrrb	negative optional; 
+PD		MEKERK  negative optional;
+MEKERK	Nanog	negative optional;	
+MEKERK	Tcf3 	negative optional;
+Gbx2 Klf4 positive optional;
+Klf4 Klf2 positive optional;
+Klf4 Tfcp2l1 positive optional;
+Sall4 Klf2 positive optional;
+Tfcp2l1 Sall4 positive optional;
+Tfcp2l1 Esrrb positive optional;
+Oct4 Tfcp2l1 positive optional;
+Oct4 Nanog positive optional;
+Klf2 Oct4 positive optional;
+Nanog Esrrb positive optional;
+Nanog Sox2 positive optional;
+MEKERK Etv5 positive optional;
+Etv5 Oct6 positive optional;
+Etv5 Lef1 positive optional;
+Esrrb Tcf15 positive optional;
+Esrrb Tcf15 negative optional;
+Esrrb Utf1 positive optional;
+Esrrb Utf1 negative optional;
+Esrrb Lef1 positive optional;
+Esrrb Lef1 negative optional;
+Esrrb Dnmt3a positive optional;
+Esrrb Dnmt3a negative optional;
+Esrrb Otx2 positive optional;
+Esrrb Otx2 negative optional;
+Esrrb Etv5 positive optional;
+Esrrb Etv5 negative optional;
+
+
+
+
+Klf4 Esrrb positive optional;
+Klf4 Tbx3 positive optional;
+Klf4 Stat3 positive optional;
+Klf4 Nanog positive optional;
+Klf4 Sox2 positive optional;
+Klf2 Klf4 positive optional;
+Klf2 Esrrb positive optional;
+Klf2 Tfcp2l1 positive optional;
+Klf2 Tbx3 positive optional;
+Klf2 Stat3 positive optional;
+Klf2 Nanog positive optional;
+Klf2 Sox2 positive optional;
+Esrrb Klf4 positive optional;
+Esrrb Klf2 positive optional;
+Esrrb Tfcp2l1 positive optional;
+Esrrb Stat3 positive optional;
+Esrrb Nanog positive optional;
+Esrrb Sox2 positive optional;
+Esrrb Tcf3 positive optional;
+Tfcp2l1 Klf4 positive optional;
+Tfcp2l1 Klf2 positive optional;
+Tfcpsl1 Tbx3 positive optional;
+Tfcp2l1 Stat3 positive optional;
+Tfcp2l1 Nanog positive optional;
+Tfcp2l1 Sox2 positive optional;
+Tbx3 Klf4 positive optional;
+Tbx3 Klf2 positive optional;
+Tbx3 Esrrb positive optional;
+Tbx3 Tfcp2l1 positive optional;
+Tbx3 Stat3 positive optional;
+Tbx3 Tcf3 positive optional;
+Tbx3 Nanog positive optional;
+Tbx3 Sox2 positive optional;
+Stat3 Klf4 positive optional;
+Stat3 Klf2 positive optional;
+Stat3 Esrrb positive optional;
+Stat3 Tfcp2l1 positive optional;
+Stat3 Tbx3 positive optional;
+Stat3 Tcf3 positive optional;
+Stat3 Nanog positive optional;
+Stat3 Sox2 positive optional;
+Tcf3 Esrrb positive optional;
+Tcf3 Tbx3 positive optional;
+Tcf3 Sox2 positive optional;
+Nanog Klf4 positive optional;
+Nanog Klf2 positive optional;
+Nanog Tfcp2l1 positive optional;
+Nanog Tbx3 positive optional;
+Nanog Stat3 positive optional;
+Sox2 Klf4 positive optional;
+Sox2 Klf2 positive optional;
+Sox2 Esrrb positive optional;
+Sox2 Tfcp2l1 positive optional;
+Sox2 Tbx3 positive optional;
+Sox2 Tcf3 positive optional;
+Sox2 Nanog positive optional;
+Sox2 Stat3 positive optional;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
