@@ -1,0 +1,367 @@
+// Synchronous dynamics
+directive updates sync;
+
+//Default regulation conditions
+directive regulation default;
+
+
+
+
+Maf (0..17);
+Hnf4a  (0..17);
+Klf5   (0..17);
+Junb   (0..17);
+Relb   (0..17);
+Hivep1 (0..17);
+Nfkb1  (0..17);
+Tcf7l1 (0..17);
+Fosl1  (0..17);
+Tead4 (0..17); 
+Pbx1	(0..17);  
+Hnf1b (0..17);
+Gatm   (0..17);
+Slc34a1 (0..17);
+Plcb1  (0..17);
+Fhit   (0..17);
+Bcas3  (0..17);
+Esrrg  (0..17);
+Unc13c (0..17);
+Kynu   (0..17);
+Plxdc2 (0..17);
+Pdzrn3 (0..17);
+Slc13a (0..17);
+Gas2   (0..17);
+Mpped2 (0..17);
+Slc16a (0..17);
+Btbd3  (0..17);
+Abca4  (0..17);
+Slc6a1 (0..17);
+Gcnt1  (0..17);
+Atxn2  (0..17);
+Acsm5  (0..17);
+Nrg1   (0..17);
+Pvt1   (0..17);
+Ptprm  (0..17);
+Tshz2  (0..17);
+Myh9   (0..17);
+Tet3   (0..17);
+Syne2  (0..17);
+Sc34a1 (0..17);
+Dab2 (0..17);
+Top2a  (0..17);
+Mki67 (0..17);
+kim1 (0..17);
+Vcam1 (0..17);
+
+
+Hnf4a Hnf4a positive;
+Hnf1b Hnf1b positive;
+Pbx1 Pbx1 positive;
+Fosl1 Fosl1 positive;
+Tead4 Tead4 positive;
+Nfkb1 Nfkb1 positive;
+Relb Relb positive;
+
+
+Hnf4a Gatm positive optional;
+Hnf4a Slc34a1 positive optional;
+Hnf4a Fhit positive optional;
+Hnf4a Bcas3 positive optional;
+Hnf4a Dab2 positive optional;
+Hnf4a Esrrg	positive optional;
+Hnf4a Unc13c positive optional;
+Hnf4a Kynu positive optional;
+Hnf4a Plxdc2 positive optional;
+Hnf4a Acsm5 positive optional;
+Hnf4a Atxn2 positive optional;
+Hnf4a Gcnt1	positive optional;
+Hnf4a Slc6a1 positive optional;
+Hnf4a Abca4	positive optional;
+Hnf4a Btbd3	positive optional;
+Hnf4a Slc16a positive optional;
+Hnf4a Mpped2 positive optional;
+Hnf4a Gas2	positive optional;
+Hnf4a Slc13a positive optional;
+Hnf1b Sc34a1 positive optional;
+Hnf1b Esrrg	positive optional;
+Hnf1b Acsm5	positive optional;
+Hnf1b Atxn2	positive optional;
+Hnf1b Gcnt1	positive optional;
+Hnf1b Slc6a1 positive optional;
+Hnf1b Abca4	positive optional;
+Hnf1b Btbd3	positive optional;
+Hnf1b Slc16a positive optional;
+Hnf1b Mpped2 positive optional;
+Pbx1 Plcb1	positive optional;
+Pbx1 Esrrg	positive optional;
+Pbx1 Pdzrn3	positive optional;
+			
+Fosl1 Nrg1	positive optional;
+Fosl1 Pvt1	positive optional;
+Fosl1 Myh9	positive optional;
+Fosl1 Tet3	positive optional;
+Fosl1 Ptprm	positive optional;
+Tead4 Ptprm	positive optional;
+Tead4 Tet3	positive optional;
+			
+Nfkb1 Myh9	positive optional;
+Relb Nrg1	positive optional;
+Relb Ptprm	positive optional;
+Relb Tshz2	positive optional;
+Relb Myh9	positive optional;
+Relb Syne2	positive optional;
+
+
+
+#Experimentone[0]  |= $Control;
+
+
+
+
+$Control:= 
+{  
+MAF = 1
+};
+
+
+$4H:= 	  
+{			  
+MAF    =   1 and
+HNF4A  =   0 and
+KLF5   =   1 and
+JUNB   =   1 and
+RELB   =   1 and
+HIVEP1 =   0 and
+NFKB1  =   1 and
+TCF7L1 =   0 and
+FOSL1  =   1 and
+TEAD4  =   1 and
+PBX1   =   0 and
+HNF1B  =   1 and
+GATM   =   0 and
+SLC34A1 =  0 and
+PLCB1  =   0 and
+FHIT   =   0 and
+BCAS3  =   0 and
+DAB2   =   0 and
+ESRRG  =   0 and
+UNC13C =   0 and
+KYNU   =   0 and
+PLXDC2 =   0 and
+PDZRN3 =   0 and
+GAS2   =   0 and
+MPPED2 =   0 and
+BTBD3  =   1 and
+ABCA4  =   0 and
+SLC6A1 =   0 and
+GCNT1  =   1 and
+ATXN2  =   0 and
+ACSM5  =   1 and
+NRG1   =   1 and
+PVT1   =   1 and
+PTPRM  =   0 and
+TSHZ2  =   0 and
+MYH9   =   1 and
+TET3   =   0 and
+SYNE2  =   1 and
+TOP2A  =   0 and
+MKI67  =   0 and
+VCAM1  =   1
+
+			  
+};			 
+
+
+
+$12H:= 	  
+{			  
+MAF    =   0 and
+HNF4A  =   0 and
+KLF5   =   1 and
+JUNB   =   1 and
+RELB   =   1 and
+HIVEP1 =   0 and
+NFKB1  =   1 and
+TCF7L1 =   0 and
+FOSL1  =   1 and
+TEAD4  =   1 and
+PBX1   =   1 and
+HNF1B  =   1 and
+GATM   =   0 and
+SLC34A1 =  0 and
+PLCB1  =   1 and
+FHIT   =   0 and
+BCAS3  =   0 and
+DAB2   =   0 and
+ESRRG  =   0 and
+UNC13C =   0 and
+KYNU   =   0 and
+PLXDC2 =   0 and
+PDZRN3 =   0 and
+GAS2   =   1 and
+MPPED2 =   0 and
+BTBD3  =   1 and
+ABCA4  =   0 and
+SLC6A1 =   0 and
+GCNT1  =   0 and
+ATXN2  =   0 and
+ACSM5  =   0 and
+NRG1   =   1 and
+PVT1   =   1 and
+PTPRM  =   1 and
+TSHZ2  =   1 and
+MYH9   =   1 and
+TET3   =   0 and
+SYNE2  =   1 and
+TOP2A  =   0 and
+MKI67  =   0 and
+VCAM1  =   1
+
+			  
+};	
+
+
+$2D:= 	  
+{			  
+MAF    =   1 and
+HNF4A  =   1 and
+KLF5   =   0 and
+JUNB   =   0 and
+RELB   =   1 and
+HIVEP1 =   1 and
+NFKB1  =   0 and
+TCF7L1 =   1 and
+FOSL1  =   0 and
+TEAD4  =   0 and
+PBX1   =   1 and
+HNF1B  =   0 and
+GATM   =   0 and
+SLC34A1 =  0 and
+PLCB1  =   1 and
+FHIT   =   0 and
+BCAS3  =   1 and
+DAB2   =   0 and
+ESRRG  =   1 and
+UNC13C =   1 and
+KYNU   =   1 and
+PLXDC2 =   0 and
+PDZRN3 =   0 and
+GAS2   =   1 and
+MPPED2 =   1 and
+BTBD3  =   0 and
+ABCA4  =   0 and
+SLC6A1 =   0 and
+GCNT1  =   0 and
+ATXN2  =   1 and
+ACSM5  =   0 and
+NRG1   =   1 and
+PVT1   =   1 and
+PTPRM  =   0 and
+TSHZ2  =   0 and
+MYH9   =   1 and
+TET3   =   0 and
+SYNE2  =   1 and
+TOP2A  =   1 and
+MKI67  =   1 and
+VCAM1  =   1
+
+			  
+};	
+
+
+$14D:= 	  
+{			  
+MAF    =   0 and
+HNF4A  =   0 and
+KLF5   =   0 and
+JUNB   =   0 and
+RELB   =   0 and
+HIVEP1 =   1 and
+NFKB1  =   0 and
+TCF7L1 =   0 and
+FOSL1  =   0 and
+TEAD4  =   0 and
+PBX1   =   1 and
+HNF1B  =   0 and
+GATM   =   0 and
+SLC34A1 =  1 and
+PLCB1  =   1 and
+FHIT   =   1 and
+BCAS3  =   1 and
+DAB2   =   1 and
+ESRRG  =   1 and
+UNC13C =   1 and
+KYNU   =   1 and
+PLXDC2 =   1 and
+PDZRN3 =   1 and
+GAS2   =   0 and
+MPPED2 =   1 and
+BTBD3  =   0 and
+ABCA4  =   1 and
+SLC6A1 =   0 and
+GCNT1  =   0 and
+ATXN2  =   1 and
+ACSM5  =   0 and
+NRG1   =   0 and
+PVT1   =   1 and
+PTPRM  =   1 and
+TSHZ2  =   0 and
+MYH9   =   0 and
+TET3   =   1 and
+SYNE2  =   0 and
+TOP2A  =   0 and
+MKI67  =   0 and
+VCAM1  =   0
+
+			  
+};
+
+
+
+
+$6W:= 	  
+{			  
+MAF    =   1 and
+HNF4A  =   0 and
+KLF5   =   0 and
+JUNB   =   0 and
+RELB   =   0 and
+HIVEP1 =   1 and
+NFKB1  =   1 and
+TCF7L1 =   1 and
+FOSL1  =   0 and
+TEAD4  =   0 and
+PBX1   =   1 and
+HNF1B  =   0 and
+GATM   =   1 and
+SLC34A1 =  1 and
+PLCB1  =   1 and
+FHIT   =   0 and
+BCAS3  =   1 and
+DAB2   =   1 and
+ESRRG  =   1 and
+UNC13C =   0 and
+KYNU   =   1 and
+PLXDC2 =   1 and
+PDZRN3 =   1 and
+GAS2   =   0 and
+MPPED2 =   1 and
+BTBD3  =   1 and
+ABCA4  =   1 and
+SLC6A1 =   0 and
+GCNT1  =   1 and
+ATXN2  =   0 and
+ACSM5  =   0 and
+NRG1   =   0 and
+PVT1   =   0 and
+PTPRM  =   0 and
+TSHZ2  =   0 and
+MYH9   =   0 and
+TET3   =   0 and
+SYNE2  =   0 and
+TOP2A  =   0 and
+MKI67  =   0 and
+VCAM1  =   0
+
+			  
+};

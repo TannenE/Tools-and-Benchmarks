@@ -1,0 +1,428 @@
+
+
+
+Maf (0..17);
+Hnf4a  (0..17);
+Klf5   (0..17);
+Junb   (0..17);
+Relb   (0..17);
+Hivep1 (0..17);
+Nfkb1  (0..17);
+Tcf7l1 (0..17);
+Fosl1  (0..17);
+Tead4 (0..17); 
+Pbx1	(0..17);  
+Hnf1b (0..17);
+
+
+
+Gatm   (0..17);
+Slc34a1 (0..17);
+Plcb1  (0..17);
+Fhit   (0..17);
+Bcas3  (0..17);
+Esrrg  (0..17);
+Unc13c (0..17);
+Kynu   (0..17);
+Plxdc2 (0..17);
+Pdzrn3 (0..17);
+Slc13a (0..17);
+Gas2   (0..17);
+Mpped2 (0..17);
+Slc16a (0..17);
+Btbd3  (0..17);
+Abca4  (0..17);
+Slc6a1 (0..17);
+Gcnt1  (0..17);
+Atxn2  (0..17);
+Acsm5  (0..17);
+Nrg1   (0..17);
+Pvt1   (0..17);
+Ptprm  (0..17);
+Tshz2  (0..17);
+Myh9   (0..17);
+Tet3   (0..17);
+Syne2  (0..17);
+Sc34a1 (0..17);
+Dab2 (0..17);
+Top2a  (0..17);
+Mki67 (0..17);
+kim1 (0..17);
+Vcam1 (0..17);
+
+
+Hnf4a Hnf4a positive;
+Hnf1b Hnf1b positive;
+Pbx1 Pbx1 positive;
+Fosl1 Fosl1 positive;
+Tead4 Tead4 positive;
+Nfkb1 Nfkb1 positive;
+Relb Relb positive;
+
+
+Hnf4a Gatm positive optional;
+Hnf4a Slc34a1 positive optional;
+Hnf4a Fhit positive optional;
+Hnf4a Bcas3 positive optional;
+Hnf4a Dab2 positive optional;
+Hnf4a Esrrg	positive optional;
+Hnf4a Unc13c positive optional;
+Hnf4a Kynu positive optional;
+Hnf4a Plxdc2 positive optional;
+Hnf4a Acsm5 positive optional;
+Hnf4a Atxn2 positive optional;
+Hnf4a Gcnt1	positive optional;
+Hnf4a Slc6a1 positive optional;
+Hnf4a Abca4	positive optional;
+Hnf4a Btbd3	positive optional;
+Hnf4a Slc16a positive optional;
+Hnf4a Mpped2 positive optional;
+Hnf4a Gas2	positive optional;
+Hnf4a Slc13a positive optional;
+Hnf1b Sc34a1 positive optional;
+Hnf1b Esrrg	positive optional;
+Hnf1b Acsm5	positive optional;
+Hnf1b Atxn2	positive optional;
+Hnf1b Gcnt1	positive optional;
+Hnf1b Slc6a1 positive optional;
+Hnf1b Abca4	positive optional;
+Hnf1b Btbd3	positive optional;
+Hnf1b Slc16a positive optional;
+Hnf1b Mpped2 positive optional;
+Pbx1 Plcb1	positive optional;
+Pbx1 Esrrg	positive optional;
+Pbx1 Pdzrn3	positive optional;
+			
+Fosl1 Nrg1	positive optional;
+Fosl1 Pvt1	positive optional;
+Fosl1 Myh9	positive optional;
+Fosl1 Tet3	positive optional;
+Fosl1 Ptprm	positive optional;
+Tead4 Ptprm	positive optional;
+Tead4 Tet3	positive optional;
+			
+Nfkb1 Myh9	positive optional;
+Relb Nrg1	positive optional;
+Relb Ptprm	positive optional;
+Relb Tshz2	positive optional;
+Relb Myh9	positive optional;
+Relb Syne2	positive optional;
+
+
+#Experimentone[0] |=  $Healthys1;
+#Experimentone[0] |=  $tfon;
+#Experimentone[18] |=  $Healthys2;
+#Experimentone[19] |=  $Healthys2;
+
+
+#Experimenttwo[0] |=  $Healthys2;
+#Experimenttwo[0] |=  $tfon;
+#Experimenttwo[18] |=  $Healthys3;
+#Experimenttwo[19] |=  $Healthys3;
+
+//#Experimentthree[0] |=  $Healthys3;
+//#Experimentthree[0] |=  $tfon;
+//#Experimentthree[18] |=  $RepairingPT;
+//#Experimentthree[19] |=  $RepairingPT;
+
+//#Experimentfour[0] |=  $RepairingPT;
+//#Experimentfour[0] |=  $tfon;
+//#Experimentfour[18] |=  $Injureds12;
+//#Experimentfour[19] |=  $Injureds12;
+
+//#Experimentfive[0] |=  $Injureds12;
+//#Experimentfive[0] |=  $tfon;
+//#Experimentfive[18] |=  $InjuredS3;
+//#Experimentfive[19] |=  $InjuredS3;
+
+//#Experimentsix[0] |=  $InjuredS3;
+//#Experimentsix[0] |=  $tfon;
+//#Experimentsix[18] |=  $SevereinjuredPT;
+//#Experimentsix[19] |=  $SevereinjuredPT;
+
+//#Experimentseven[0] |=  $SevereinjuredPT;
+//#Experimentseven[18] |=  $FailedrepairPT;
+//#Experimentseven[19] |=  $FailedrepairPT;
+
+ 
+	Hnf4a =1 and
+	Hnf1b =1 and
+	Pbx1 =1 and
+	Fosl1 =1 and
+	Tead4=1 and
+	Nfkb1 =1 and
+	Relb=1
+};
+
+
+$Healthys1:=
+{
+ Gatm  =1 and
+Slc34a1=1 and 
+Plcb1  =1 and
+Fhit   =1 and
+Bcas3  =1 and
+Dab2  	=1 and
+Esrrg  =1 and
+Unc13c =1 and
+Kynu   =1 and
+Plxdc2 =1 and
+Pdzrn3 = 0 and
+Slc13a = 0 and
+Gas2   = 0 and
+Mpped2 = 0 and
+Slc16a = 0 and
+Btbd3  = 0 and
+Abca4  = 0 and
+Slc6a1 = 0 and
+Gcnt1  = 0 and
+Atxn2  = 0 and
+Acsm5  = 0 and
+Nrg1   = 0 and
+Pvt1   = 0 and
+Ptprm  = 0 and
+Tshz2  = 0 and
+Myh9   = 0 and
+Tet3   = 0 and
+Syne2   = 0 
+
+};
+
+
+
+$Healthys2:=
+{
+ Gatm  =0 and
+Slc34a1=1 and 
+Plcb1  =1 and
+Fhit   =1 and
+Bcas3  =1 and
+Dab2  	=1 and
+Esrrg  =1 and
+Unc13c =1 and
+Kynu   =1 and
+Plxdc2 =1 and
+Pdzrn3 = 1 and
+Slc13a = 1 and
+Gas2   = 1 and
+Mpped2 = 1 and
+Slc16a = 1 and
+Btbd3  = 0 and
+Abca4  = 0 and
+Slc6a1 = 0 and
+Gcnt1  = 0 and
+Atxn2  = 0 and
+Acsm5  = 0 and
+Nrg1   = 0 and
+Pvt1   = 0 and
+Ptprm  = 0 and
+Tshz2  = 0 and
+Myh9   = 0 and
+Tet3   = 0 and
+Syne2   = 0 
+
+};
+
+
+
+$Healthys3:=
+{
+ Gatm  =0 and
+Slc34a1=0 and 
+Plcb1  =0 and
+Fhit   =0 and
+Bcas3  =0 and
+Dab2  	=0 and
+Esrrg  =0 and
+Unc13c =0 and
+Kynu   =1 and
+Plxdc2 =1 and
+Pdzrn3 = 1 and
+Slc13a = 0 and
+Gas2   = 0 and
+Mpped2 = 1 and
+Slc16a = 1 and
+Btbd3  = 1 and
+Abca4  = 1 and
+Slc6a1 = 1 and
+Gcnt1  = 1 and
+Atxn2  = 1 and
+Acsm5  = 1 and
+Nrg1   = 0 and
+Pvt1   = 0 and
+Ptprm  = 0 and
+Tshz2  = 0 and
+Myh9   = 0 and
+Tet3   = 0 and
+Syne2   = 0 
+
+};
+
+$RepairingPT:=
+{
+ Gatm  =0 and
+Slc34a1=0 and 
+Plcb1  =1 and
+Fhit   =0 and
+Bcas3  =1 and
+Dab2  	=1 and
+Esrrg  =1 and
+Unc13c =0 and
+Kynu   =1 and
+Plxdc2 =1 and
+Pdzrn3 = 0 and
+Slc13a = 0 and
+Gas2   = 0 and
+Mpped2 = 0 and
+Slc16a = 0 and
+Btbd3  = 0 and
+Abca4  = 0 and
+Slc6a1 = 0 and
+Gcnt1  = 0 and
+Atxn2  = 0 and
+Acsm5  = 0 and
+Nrg1   = 0 and
+Pvt1   = 1 and
+Ptprm  = 0 and
+Tshz2  = 0 and
+Myh9   = 0 and
+Tet3   = 0 and
+Syne2   = 0 
+
+};
+
+
+
+$Injureds12:=
+{
+ Gatm  =0 and
+Slc34a1=0 and 
+Plcb1  =0 and
+Fhit   =0 and
+Bcas3  =0 and
+Dab2  	=0 and
+Esrrg  =0 and
+Unc13c =0 and
+Kynu   =0 and
+Plxdc2 =0 and
+Pdzrn3 = 0 and
+Slc13a = 0 and
+Gas2   = 0 and
+Mpped2 = 0 and
+Slc16a = 0 and
+Btbd3  = 0 and
+Abca4  = 0 and
+Slc6a1 = 0 and
+Gcnt1  = 0 and
+Atxn2  = 0 and
+Acsm5  = 0 and
+Nrg1   = 1 and
+Pvt1   = 1 and
+Ptprm  = 0 and
+Tshz2  = 1 and
+Myh9   = 0 and
+Tet3   = 0 and
+Syne2   = 0 
+
+};
+
+
+$InjuredS3:=
+{
+ Gatm  =0 and
+Slc34a1=0 and 
+Plcb1  =0 and
+Fhit   =0 and
+Bcas3  =0 and
+Dab2  	=0 and
+Esrrg  =0 and
+Unc13c =0 and
+Kynu   =0 and
+Plxdc2 =0 and
+Pdzrn3 = 0 and
+Slc13a = 0 and
+Gas2   = 0 and
+Mpped2 = 0 and
+Slc16a = 0 and
+Btbd3  = 0 and
+Abca4  = 0 and
+Slc6a1 = 0 and
+Gcnt1  = 0 and
+Atxn2  = 0 and
+Acsm5  = 1 and
+Nrg1   = 1 and
+Pvt1   = 1 and
+Ptprm  = 1 and
+Tshz2  = 1 and
+Myh9   = 1 and
+Tet3   = 1 and
+Syne2   = 1 
+
+};
+
+
+$SevereinjuredPT:=
+{
+ Gatm  =0 and
+Slc34a1=0 and 
+Plcb1  =0 and
+Fhit   =0 and
+Bcas3  =0 and
+Dab2  	=0 and
+Esrrg  =0 and
+Unc13c =0 and
+Kynu   =0 and
+Plxdc2 =0 and
+Pdzrn3 = 0 and
+Slc13a = 0 and
+Gas2   = 0 and
+Mpped2 = 0 and
+Slc16a = 0 and
+Btbd3  = 0 and
+Abca4  = 0 and
+Slc6a1 = 0 and
+Gcnt1  = 0 and
+Atxn2  = 0 and
+Acsm5  = 1 and
+Nrg1   = 1 and
+Pvt1   = 1 and
+Ptprm  = 1 and
+Tshz2  = 1 and
+Myh9   = 1 and
+Tet3   = 0 and
+Syne2   = 0 
+
+};
+
+$FailedrepairPT:=
+{
+ Gatm  =0 and
+Slc34a1=0 and 
+Plcb1  =0 and
+Fhit   =0 and
+Bcas3  =0 and
+Dab2  	=0 and
+Esrrg  =1 and
+Unc13c =0 and
+Kynu   =0 and
+Plxdc2 =0 and
+Pdzrn3 = 0 and
+Slc13a = 0 and
+Gas2   = 0 and
+Mpped2 = 0 and
+Slc16a = 0 and
+Btbd3  = 0 and
+Abca4  = 0 and
+Slc6a1 = 0 and
+Gcnt1  = 0 and
+Atxn2  = 0 and
+Acsm5  = 1 and
+Nrg1   = 1 and
+Pvt1   = 1 and
+Ptprm  = 1 and
+Tshz2  = 0 and
+Myh9   = 1 and
+Tet3   = 0 and
+Syne2   = 1 
+
+};
