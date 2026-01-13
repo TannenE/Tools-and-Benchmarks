@@ -1,0 +1,2461 @@
+// Synchronous dynamics
+directive updates sync;
+
+//Default regulation conditions
+directive regulation default;
+
+
+
+Maf     (0..17);
+Hnf4a   (0..17);
+Klf5    (0..17);
+Junb    (0..17);
+Relb    (0..17);
+Hivep1  (0..17);
+Nfkb1   (0..17);
+Tcf7l1  (0..17);
+Fosl1   (0..17);
+Tead4  	(0..17);
+Pbx1   	(0..17);
+Hnf1b  	(0..17);
+		(0..17);
+		(0..17);
+Gatm    (0..17);
+Slc34a1 (0..17); 
+Plcb1   (0..17);
+Fhit    (0..17);
+Bcas3   (0..17);
+Esrrg   (0..17);
+Unc13c  (0..17);
+Kynu    (0..17);
+Plxdc2  (0..17);
+Pdzrn3  (0..17);
+Slc13a  (0..17);
+Gas2    (0..17);
+Mpped2  (0..17);
+Slc16a  (0..17);
+Btbd3   (0..17);
+Abca4   (0..17);
+Slc6a1  (0..17);
+Gcnt1   (0..17);
+Atxn2   (0..17);
+Acsm5   (0..17);
+Nrg1    (0..17);
+Pvt1    (0..17);
+Ptprm   (0..17);
+Tshz2   (0..17);
+Myh9    (0..17);
+Tet3    (0..17);
+Syne2   (0..17);
+Sc34a1  (0..17);
+Dab2  	(0..17);
+Vcam1  	(0..17);
+Havcr1 	(0..17);
+Slc6a13 (0..17);
+Slc13a3 (0..17);
+
+
+
+
+
+A1[-+](1..17);
+
+A2[-+](1..17);
+
+A3[-+](1..17);
+
+A4[-+](1..17);
+
+A5[-+](1..17);
+
+A6[-+](1..17);
+
+A7[-+](1..17);
+
+A8[-+](1..17);
+
+A9[-+](1..17);
+
+A10[-+](1..17);
+A11[-+](1..17);
+A12[-+](1..17);
+A13[-+](1..17);
+A14[-+](1..17);
+
+
+
+
+Hnf4a A1 positive;
+A1 A2 positive;
+A2 Hnf4a positive;
+Hnf1b A3 positive;
+A3 A4 positive;
+A4 Hnf1b positive;
+Pbx1 A5 positive;
+A5 A6 positive;
+A6 Pbx1 positive;
+Fosl1 A7 positive;
+A7 A8 positive;
+A8 Fosl1 positive;
+Tead4 A9 positive;
+A9 A10 positive;
+A10 Tead4 positive;
+Nfkb1 A11 positive;
+A11 A12 positive;
+A12 Nfkb1 positive;
+Relb A13 positive;
+A13 A14 positive;
+A14 Relb positive;
+
+
+
+
+Hnf4a Gatm positive optional;
+Hnf4a Slc34a1 positive optional;
+Hnf4a Fhit positive optional;
+Hnf4a Bcas3 positive optional;
+Hnf4a Dab2 positive optional;
+Hnf4a Esrrg	positive optional;
+Hnf4a Unc13c positive optional;
+Hnf4a Kynu positive optional;
+Hnf4a Plxdc2 positive optional;
+Hnf4a Acsm5 positive optional;
+Hnf4a Atxn2 positive optional;
+Hnf4a Gcnt1	positive optional;
+Hnf4a Slc6a1 positive optional;
+Hnf4a Abca4	positive optional;
+Hnf4a Btbd3	positive optional;
+Hnf4a Slc16a positive optional;
+Hnf4a Mpped2 positive optional;
+Hnf4a Gas2	positive optional;
+Hnf4a Slc13a positive optional;
+Hnf1b Sc34a1 positive optional;
+Hnf1b Esrrg	positive optional;
+Hnf1b Acsm5	positive optional;
+Hnf1b Atxn2	positive optional;
+Hnf1b Gcnt1	positive optional;
+Hnf1b Slc6a1 positive optional;
+Hnf1b Abca4	positive optional;
+Hnf1b Btbd3	positive optional;
+Hnf1b Slc16a positive optional;
+Hnf1b Mpped2 positive optional;
+Pbx1 Plcb1 positive optional;
+Pbx1 Esrrg positive optional;
+Pbx1 Pdzrn3 positive optional;
+Maf Gatm positive optional;
+Maf Slc34a1 positive optional;
+Maf Plcb1 positive optional;
+Maf Fhit positive optional;
+Maf Bcas3 positive optional;
+Maf Dab2 positive optional;
+Maf Esrrg positive optional;
+Maf Unc13c positive optional;
+Maf Kynu positive optional;
+Maf Plxdc2 positive optional;
+Maf Pdzrn3 positive optional;
+Maf Gas2 positive optional;
+Maf Slc13a3 positive optional;
+Maf Mpped2 positive optional;
+Maf Slc16a positive optional;
+Maf Btbd3 positive optional;
+Maf Abca4 positive optional;
+Maf Slc6a13 positive optional;
+Maf Gcnt1 positive optional;
+Maf Atxn2 positive optional;
+Maf Acsm5 positive optional;
+
+
+			
+Fosl1 Nrg1 positive optional;
+Fosl1 Pvt1 positive optional;
+Fosl1 Myh9 positive optional;
+Fosl1 Tet3 positive optional;
+Fosl1 Ptprm positive optional;
+Fosl1 Havcr1 positive optional;
+Tead4 Ptprm positive optional;
+Tead4 Tet3 positive optional;
+Tead4 Havcr1 positive optional;
+Klf5 Nrg1 positive optional;
+Klf5 Pvt1 positive optional;
+Klf5 Ptprm positive optional;
+Klf5 Tshz2 positive optional;
+Klf5 Myh9 positive optional;
+Klf5 Tet3 positive optional;
+Klf5 Havcr1 positive optional;
+Junb Nrg1 positive optional;
+Junb Ptprm positive optional;
+Junb Tshz2 positive optional;
+Junb Myh9 positive optional;
+Junb Tet3 positive optional;
+Junb Havcr1 positive optional;
+
+			
+Nfkb1 Myh9	positive optional;
+Nfkb1 Vcam1 positive optional;
+Relb Nrg1	positive optional;
+Relb Ptprm	positive optional;
+Relb Tshz2	positive optional;
+Relb Myh9	positive optional;
+Relb Syne2	positive optional;
+Relb Vcam1 positive optional;
+Hivep1 Nrg1 positive optional;
+Hivep1 Ptprm positive optional;
+Hivep1 Tshz2 positive optional;
+Hivep1 Myh9 positive optional;
+Hivep1 Syne2 positive optional;
+Hivep1 Vcam1 positive optional;
+Tcf7l1 Nrg1 positive optional;
+Tcf7l1 Ptprm positive optional;
+Tcf7l1 Tshz2 positive optional;
+Tcf7l1 Myh9 positive optional;
+Tcf7l1 Syne2 positive optional;
+Tcf7l1 Vcam1 positive optional;
+
+
+
+
+
+
+
+#ExperimentTwo[0] |=  $IRI4h1;
+(#ExperimentTwo[1] |= $IRI24h1) or (#ExperimentTwo[2] |= $IRI24h1) or (#ExperimentTwo[3] |= $IRI24h1) 
+or (#ExperimentTwo[4] |= $IRI24h1) or (#ExperimentTwo[5] |= $IRI24h1) or (#ExperimentTwo[6] |= $IRI24h1)
+or (#ExperimentTwo[7] |= $IRI24h1) or (#ExperimentTwo[8] |= $IRI24h1) or (#ExperimentTwo[9] |= $IRI24h1) 
+or (#ExperimentTwo[10] |= $IRI24h1) or (#ExperimentTwo[11] |= $IRI24h1) or (#ExperimentTwo[12] |= $IRI24h1) 
+or (#ExperimentTwo[13] |= $IRI24h1) or (#ExperimentTwo[14] |= $IRI24h1) or (#ExperimentTwo[15] |= $IRI24h1) 
+or (#ExperimentTwo[16] |= $IRI24h1) or (#ExperimentTwo[17] |= $IRI24h1) or (#ExperimentTwo[18] |= $IRI24h1) or (#ExperimentTwo[19] |= $IRI24h1);
+
+
+
+
+
+$NORM3m:=
+{		
+Maf	=0 and
+Hnf4a=	0 and
+Klf5=	0 and
+Junb=	0 and
+Relb=	0 and
+Hivep1=	0 and
+Nfkb1=	0 and
+Tcf7l1=	0 and
+Fosl1=	0 and
+Tead4=	0 and
+Pbx1=	0 and
+Hnf1b=	0 and
+Gatm=	0 and
+Slc34a1=0 and
+Plcb1=	0 and
+Fhit=	0 and
+Bcas3=	0 and
+Dab2=	0 and
+Esrrg=	0 and
+Unc13c=	0 and
+Kynu=	1 and
+Plxdc2=	0 and
+Pdzrn3=	0 and
+Gas2=	0 and
+Mpped2=	0 and
+Btbd3=	0 and
+Abca4=	0 and
+Slc6a1=	0 and
+Gcnt1=	0 and
+Atxn2=	0 and
+Acsm5=	0 and
+Nrg1=	0 and
+Pvt1=	0 and
+Ptprm=	0 and
+Tshz2=	0 and
+Myh9=	0 and
+Tet3=	0 and
+Syne2=	0 and
+Vcam1=	0 and
+Havcr1=0
+};	
+
+$NORM3m1:=
+{		
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};
+
+$IRI4h:=
+{			
+Havcr1	=	0 and   
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	0 and
+Fosl1	=	1 and
+Tead4	=	1 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	1 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	0 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	0 and
+Vcam1	=	0
+			
+};			
+
+
+
+
+
+
+
+
+$NORM3m2:=
+{
+
+Havcr1	=0 and
+Maf		=0 and
+Hnf4a	=0 and
+Klf5	=0 and
+Junb	=0 and
+Relb	=0 and
+Hivep1	=0 and
+Nfkb1	=0 and
+Tcf7l1	=0 and
+Fosl1	=0 and
+Tead4	=0 and
+Pbx1	=0 and
+Hnf1b	=0 and
+Gatm	=0 and
+Slc34a1	=0 and
+Plcb1	=0 and
+Fhit	=0 and
+Bcas3	=0 and
+Dab2	=0 and
+Esrrg	=0 and
+Unc13c	=0 and
+Kynu	=0 and
+Plxdc2	=0 and
+Pdzrn3	=0 and
+Gas2	=0 and
+Mpped2	=0 and
+Btbd3	=0 and
+Abca4	=0 and
+Slc6a1	=0 and
+Gcnt1	=1 and
+Atxn2	=0 and
+Acsm5	=0 and
+Nrg1	=0 and
+Pvt1	=0 and
+Ptprm	=0 and
+Tshz2	=0 and
+Myh9	=0 and
+Tet3	=0 and
+Syne2	=0 and
+Vcam1	=0
+};
+
+$NORM9m:=
+{
+Havcr1		=0 and
+Maf			=0 and
+Hnf4a		=	0 and
+Klf5		=	0 and
+Junb		=	0 and
+Relb		=	0 and
+Hivep1		=	0 and
+Nfkb1		=	0 and
+Tcf7l1		=	0 and
+Fosl1		=	0 and
+Tead4		=	0 and
+Pbx1		=	0 and
+Hnf1b		=	0 and
+Gatm		=	0 and
+Slc34a1		=	0 and
+Plcb1		=	0 and
+Fhit		=	0 and
+Bcas3		=	0 and
+Dab2		=	0 and
+Esrrg		=	0 and
+Unc13c		=	0 and
+Kynu		=	0 and
+Plxdc2		=	0 and
+Pdzrn3		=	0 and
+Gas2		=	0 and
+Mpped2		=	0 and
+Btbd3		=	0 and
+Abca4		=	0 and
+Slc6a1		=	1 and
+Gcnt1		=	0 and
+Atxn2		=	0 and
+Acsm5		=	0 and
+Nrg1		=	0 and
+Pvt1		=	0 and
+Ptprm		=	0 and
+Tshz2		=	0 and
+Myh9		=	0 and
+Tet3		=	0 and
+Syne2		=	0 and	
+Vcam1		=	0
+};
+
+
+$NORM9m1:=
+{
+Havcr1	=	0 and
+Maf=0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};
+
+
+$NORM9m2:=
+{
+Havcr1	=	0  and
+Maf		=	0  and
+Hnf4a	=	0  and
+Klf5	=	0  and
+Junb	=	0  and
+Relb	=	0  and
+Hivep1	=	0  and
+Nfkb1	=	0  and
+Tcf7l1	=	0  and
+Fosl1	=	0  and
+Tead4	=	0  and
+Pbx1	=	0  and
+Hnf1b	=	0  and
+Gatm	=	0  and
+Slc34a1	=	0  and
+Plcb1	=	0  and
+Fhit	=	0  and
+Bcas3	=	0  and
+Dab2	=	0  and
+Esrrg	=	0  and
+Unc13c	=	0  and
+Kynu	=	0  and
+Plxdc2	=	0  and
+Pdzrn3	=	0  and
+Gas2	=	0  and
+Mpped2	=	0  and
+Btbd3	=	0  and
+Abca4	=	0  and
+Slc6a1	=	0  and
+Gcnt1	=	0  and
+Atxn2	=	0  and
+Acsm5	=	0  and
+Nrg1	=	0  and
+Pvt1	=	0  and
+Ptprm	=	0  and
+Tshz2	=	0  and
+Myh9	=	0  and
+Tet3	=	0  and
+Syne2	=	0  and
+Vcam1	=	0
+};
+
+
+$NORM15m:=
+{
+Havcr1	=	0 and
+Maf		=0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};
+
+
+$NORM15m1:=
+{
+Havcr1	=	0 and
+Maf		=0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};
+
+
+
+$NORM15m2:=
+{
+
+Havcr1	=	0 and
+Maf		=0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};
+
+
+$SHAM4h:=
+{
+Havcr1	=	0 and
+Maf		=1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	0 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	0 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	1 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	1 and
+Vcam1	=	0
+};
+
+
+
+$SHAM4h1:=
+{
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	1 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	1 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	0 and
+Gas2	=	1 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	0 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};
+
+$SHAM4h2:=
+{
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	1 and
+Slc34a1	=	0 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	0 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0 
+};
+
+$SHAM24h:=
+{	
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	0 and
+Mpped2	=	1 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};
+
+$SHAM24h1:=
+{	
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	0 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	1 and
+Vcam1	=	0
+};
+
+
+
+$SHAM24h2:=
+{	
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	0 and
+Mpped2	=	1 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};
+
+$SHAM12m:=
+{	
+
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	0 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};
+
+$SHAM12m1:=
+{	
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	0 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};
+
+$SHAM12m:=
+{	
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	0 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0 
+};
+
+
+$IRI2h:=
+{	
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	1 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	0 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	0 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};
+
+$IRI2h1:=
+{	
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	1 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	0 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	1 and
+Hnf1b	=	0 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	1 and
+Vcam1	=	0
+};			
+
+$IRI2h2:=
+{			
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	1 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	1 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0 
+};		
+
+
+
+
+
+$IRI4h1:=
+{
+
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	1 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	1 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	0 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0 
+};			
+		
+$IRI4h2:=	
+{			
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	1 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	1 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	0 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	0 and
+Myh9	=	1 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};			
+$IRI24h:=
+{			
+Havcr1	=	1 and
+Maf		=	0 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	1 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	1 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	0 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};			
+			
+$IRI24h1:=
+{		
+Havcr1	=	1 and
+Maf		=	0 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	1 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	1 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};			
+			
+$IRI24h2:=
+{			
+Havcr1	=	1 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	1 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};			
+$IRI48h:=
+{			
+Havcr1	=	1 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	1 and
+Tead4	=	1 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};			
+			
+$IRI48h1:=
+{			
+Havcr1	=	1 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	0 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	1 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	1 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	1 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};			
+			
+			
+			
+$IRI48h2:=
+{			
+Havcr1	=	1 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	1 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	0 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};			
+			
+			
+$IRI72h:=
+{			
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	1 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	0 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};			
+			
+			
+$IRI72h1:=
+{			
+Havcr1	=	1 and
+Maf		=	1 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	0 and
+Nfkb1	=	1 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	1 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	1
+};			
+			
+			
+			
+$IRI72h2:=
+{			
+Havcr1	=	1 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	0 and
+Fosl1	=	1 and
+Tead4	=	1 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	1 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	1 and
+Tet3	=	0 and
+Syne2	=	1 and
+Vcam1	=	0
+};			
+			
+			
+$IRI7d:=
+{			
+Havcr1	=	1 and
+Maf		=	1 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	1
+};			
+			
+			
+$IRI7d1:=
+{			
+Havcr1	=	1 and
+Maf		=	1 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	0 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	0 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	1
+};			
+			
+			
+$IRI7d2:=
+{			
+Havcr1	=	1 and
+Maf		=	1 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	0 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	0 and
+Slc34a1	=	1 and
+Plcb1	=	0 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	0 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	1
+};			
+			
+			
+$IRI14d:=
+{			
+Havcr1	=	1 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	1 and
+Gas2	=	0 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	1 and
+Pvt1	=	0 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	0 and
+Vcam1	=	1
+};			
+		
+			
+			
+$IRI14d1:=
+{			
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	1
+};			
+		
+			
+			
+$IRI14d2:=
+{			
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	1 and
+Plxdc2	=	0 and
+Pdzrn3	=	1 and
+Gas2	=	0 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	0 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	0 and
+Vcam1	=	1
+};			
+			
+			
+$IRI28d:=
+{			
+			
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	0 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	0 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	0 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	0 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	1
+};			
+			
+			
+			
+			
+$IRI28d1:=
+{			
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	1 and
+Hnf1b	=	0 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	0 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	1
+};			
+			
+			
+			
+$IRI28d2:=
+{			
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	0 and
+Gatm	=	1 and
+Slc34a1	=	0 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	1
+};			
+			
+			
+$IRI6m:=
+{			
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};			
+			
+			
+$IRI6m1:=
+{			
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};			
+			
+			
+$IRI6m2:=
+{			
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};			
+			
+			
+$IRI6m3:=
+{			
+Havcr1	=	0 and
+Maf		=	0 and
+Hnf4a	=	0 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	0 and
+Hivep1	=	0 and
+Nfkb1	=	0 and
+Tcf7l1	=	0 and
+Fosl1	=	0 and
+Tead4	=	0 and
+Pbx1	=	0 and
+Hnf1b	=	0 and
+Gatm	=	0 and
+Slc34a1	=	0 and
+Plcb1	=	0 and
+Fhit	=	0 and
+Bcas3	=	0 and
+Dab2	=	0 and
+Esrrg	=	0 and
+Unc13c	=	0 and
+Kynu	=	0 and
+Plxdc2	=	0 and
+Pdzrn3	=	0 and
+Gas2	=	0 and
+Mpped2	=	0 and
+Btbd3	=	0 and
+Abca4	=	0 and
+Slc6a1	=	0 and
+Gcnt1	=	0 and
+Atxn2	=	0 and
+Acsm5	=	0 and
+Nrg1	=	0 and
+Pvt1	=	0 and
+Ptprm	=	0 and
+Tshz2	=	0 and
+Myh9	=	0 and
+Tet3	=	0 and
+Syne2	=	0 and
+Vcam1	=	0
+};			
+
+	
+$IRI12m:=
+{			
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	1 and
+Junb	=	1 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	1 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+
+Vcam1	=	1
+};			
+			
+			
+$IRI12m1:=
+{			
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	0 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	1 and
+Vcam1	=	0
+};			
+		
+$IRI12m2:=
+{			
+Havcr1	=	0 and
+Maf		=	1 and
+Hnf4a	=	1 and
+Klf5	=	0 and
+Junb	=	0 and
+Relb	=	1 and
+Hivep1	=	1 and
+Nfkb1	=	1 and
+Tcf7l1	=	1 and
+Fosl1	=	0 and
+Tead4	=	1 and
+Pbx1	=	1 and
+Hnf1b	=	1 and
+Gatm	=	1 and
+Slc34a1	=	1 and
+Plcb1	=	1 and
+Fhit	=	1 and
+Bcas3	=	1 and
+Dab2	=	1 and
+Esrrg	=	1 and
+Unc13c	=	1 and
+Kynu	=	1 and
+Plxdc2	=	1 and
+Pdzrn3	=	1 and
+Gas2	=	1 and
+Mpped2	=	1 and
+Btbd3	=	1 and
+Abca4	=	1 and
+Slc6a1	=	1 and
+Gcnt1	=	1 and
+Atxn2	=	1 and
+Acsm5	=	1 and
+Nrg1	=	0 and
+Pvt1	=	1 and
+Ptprm	=	1 and
+Tshz2	=	1 and
+Myh9	=	1 and
+Tet3	=	1 and
+Syne2	=	0 and
+Vcam1	=	1
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
