@@ -1,0 +1,231 @@
+gcm[-+](0..17);gatae(0..17);sixhalf6[+](0..17);dn(0..17);
+dn gcm positive optional;
+gcm gatae positive optional;
+dn dn positive optional;
+dn gatae positive optional;
+sixhalf6 gcm positive optional;
+gatae sixhalf6 positive optional;
+gcm gcm positive optional;
+
+
+
+
+
+//Experiment one A3 chart better name
+
+
+#Experimentone[1] |=  $a31 "intial signal for gatae";
+#Experimentone[2] |=  $a32 " end dn signal on gcm";
+#Experimentone[3] |=  $a33 " end dn signal on gcm"; 
+#Experimentone[4] |=  $a34 " end dn signal on gcm";
+
+//experiment two
+#Experimenttwo[1] |=  $a41 "intial signal for gatae";
+#Experimenttwo[1] |=  $a111 "intial signal for gatae";
+#Experimenttwo[2] |=  $a42 " end dn signal on gcm";
+#Experimenttwo[3] |=  $a43 " end dn signal on gcm";
+#Experimenttwo[4] |=  $a44 " end dn signal on gcm";
+
+//experiment three
+#Experimentthree[1] |=  $a51 "intial signal for gatae";
+#Experimentthree[1] |=  $a222 "intial signal for gatae";
+#Experimentthree[2] |=  $a52 " end dn signal on gcm";
+#Experimentthree[3] |=  $a53 " end dn signal on gcm";
+#Experimentthree[4] |=  $a54 " end dn signal on gcm";
+
+
+
+
+
+$a30 :=
+{
+ dn = 0 and
+ gcm = 0 and
+ gatae = 0 and
+ sixhalf6 = 0 
+};
+$a31 :=
+{
+dn = 1 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 0 
+};
+$a32 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 0 
+};
+$a33 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+};
+$a34 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+
+};
+$a35 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+
+};
+$a36 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};
+$a37 :=
+{
+dn = 0 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};
+$a111 :=
+{
+KO(gcm) = 1
+
+};
+
+
+
+
+
+$a30 :=
+{
+ dn = 0 and
+ gcm = 0 and
+ gatae = 0 and
+ sixhalf6 = 0 
+};
+$a41 :=
+{
+dn = 1 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 0 
+};
+$a42 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 0 and
+sixhalf6 = 0 
+};
+$a43 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 0 and
+sixhalf6 = 1 
+};
+$a44 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};
+$a45 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};
+$a46 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};
+$a47 :=
+{
+dn = 0 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};
+
+
+$a222 :=
+{
+FE(gcm) = 1
+
+};
+
+
+$a51 :=
+{
+dn = 1 and
+gatae = 0 and
+gcm = 1 and
+sixhalf6 = 0 
+};
+$a52 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 0 
+};
+$a53 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+};
+$a54 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+
+};
+$a55 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+
+};
+$a56 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};
+$a57 :=
+{
+dn = 0 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};

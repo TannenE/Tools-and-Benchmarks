@@ -1,0 +1,136 @@
+inputA(0..17);inputB(0..17);A(0..17);B(0..17);C[-](0..17);
+inputA A positive optional;
+A B positive optional;
+A C positive optional;
+B C negative optional;
+inputB B positive optional;
+
+
+
+
+
+//Experiment one D3 chart
+
+
+#Experimentone[0] |=  $d31 "intial signal for gatae";
+#Experimentone[1] |=  $d32 " end dn signal on gcm";
+#Experimentone[2] |=  $d33 " end dn signal on gcm";
+#Experimentone[3] |=  $d34 " end dn signal on gcm";
+#Experimentone[4] |=  $d35 " end dn signal on gcm";
+//expirementtwo
+
+#Experimenttwo[0] |=  $d41 "intial signal for gatae";
+#Experimenttwo[0] |=  $d111 "intial signal for gatae";
+#Experimenttwo[1] |=  $d42 " end dn signal on gcm";
+#Experimenttwo[2] |=  $d43 " end dn signal on gcm";
+#Experimenttwo[3] |=  $d44 " end dn signal on gcm";
+#Experimenttwo[4] |=  $d45 " end dn signal on gcm";
+
+$a30 :=
+{
+ A = 0 and
+B = 0 and
+C = 0 and
+inputA = 0 and
+inputB = 0 
+};
+$d31 :=
+{
+A = 0 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+};
+$d32 :=
+{
+A = 1 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+};
+$d33 :=
+{
+A = 1 and
+B = 1 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+};
+$d34 :=
+{
+A = 1 and
+B = 1 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+
+};
+$d35 :=
+{
+A = 1 and
+B = 1 and
+C = 0 and
+inputA = 1 and
+inputB = 0  
+
+};
+
+
+$a30 :=
+{
+ A = 0 and
+B = 0 and
+C = 0 and
+inputA = 0 and
+inputB = 0 
+};
+
+
+$d111 :=
+{
+KO(C) = 1
+};
+$d41 :=
+{
+A = 0 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+};
+$d42 :=
+{
+A = 1 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+};
+$d43 :=
+{
+A = 1 and
+B = 1 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+};
+$d44 :=
+{
+A = 1 and
+B = 1 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+
+};
+$d45 :=
+{
+A = 1 and
+B = 1 and
+C = 0 and
+inputA = 1 and
+inputB = 0  
+
+};

@@ -1,0 +1,200 @@
+inputA(0..17);inputB(0..17);A(0..17);B(0..17);C[-+](0..17);
+inputA A positive optional;
+A B positive optional;
+A C positive optional;
+B C negative optional;
+inputB B positive optional;
+
+
+
+
+
+//Experiment one D1 chart
+
+
+#Experimentone[0] |=  $d11 "intial signal for gatae";
+#Experimentone[1] |=  $d12 " end dn signal on gcm";
+#Experimentone[2] |=  $d13 " end dn signal on gcm";
+#Experimentone[3] |=  $d14 " end dn signal on gcm";
+#Experimentone[4] |=  $d15 " end dn signal on gcm";
+
+
+
+
+//experimenttwo
+#Experimenttwo[0] |=  $d21 "intial signal for gatae";
+#Experimenttwo[0] |=  $d111 "intial signal for gatae";
+#Experimenttwo[1] |=  $d22 " end dn signal on gcm";
+#Experimenttwo[2] |=  $d23 " end dn signal on gcm";
+#Experimenttwo[3] |=  $d24 " end dn signal on gcm";
+#Experimenttwo[4] |=  $d25 " end dn signal on gcm";
+
+
+
+
+//experimenttwo
+#Experimentthree[0] |=  $d31 "intial signal for gatae";
+#Experimentthree[0] |=  $d222 "intial signal for gatae";
+#Experimentthree[1] |=  $d32 " end dn signal on gcm";
+#Experimentthree[2] |=  $d33 " end dn signal on gcm";
+#Experimentthree[3] |=  $d34 " end dn signal on gcm";
+#Experimentthree[4] |=  $d35 " end dn signal on gcm";
+$a10 :=
+{
+ A = 0 and
+B = 0 and
+C = 0 and
+inputA = 0 and
+inputB = 0 
+};
+$d11 :=
+{
+A = 0 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+};
+$d12 :=
+{
+A = 1 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+};
+$d13 :=
+{
+A = 1 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+};
+$d14 :=
+{
+A = 1 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+
+};
+$d15 :=
+{
+A = 1 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0  
+
+};
+
+
+$a10 :=
+{
+ A = 0 and
+B = 0 and
+C = 0 and
+inputA = 0 and
+inputB = 0 
+};
+
+$d111 :=
+{
+KO(C) = 1
+};
+$d21 :=
+{
+A = 0 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+};
+$d22 :=
+{
+A = 1 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+};
+$d23 :=
+{
+A = 1 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+};
+$d24 :=
+{
+A = 1 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0 
+
+};
+$d25 :=
+{
+A = 1 and
+B = 0 and
+C = 0 and
+inputA = 1 and
+inputB = 0  
+
+};
+
+
+
+$d222 :=
+{
+FE(C) = 1 
+
+};
+
+
+$d31 :=
+{
+A = 0 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+};
+$d32 :=
+{
+A = 1 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+};
+$d33 :=
+{
+A = 1 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+};
+$d34 :=
+{
+A = 1 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0 
+
+};
+$d35 :=
+{
+A = 1 and
+B = 0 and
+C = 1 and
+inputA = 1 and
+inputB = 0  
+
+};

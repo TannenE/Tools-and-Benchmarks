@@ -1,0 +1,182 @@
+dngate(0..17);dnsignal(0..17);alx(0..17);gcm[-](0..17);skelefate(0..17);nsmfate(0..17);
+dngate alx positive ;
+alx skelefate positive ;
+alx gcm negative optional;
+dnsignal gcm positive optional;
+gcm nsmfate positive optional;
+gcm alx negative optional;
+
+
+
+//Experiment one e3 chart
+
+
+#Experimentone[0] |=  $e11 "intial signal for gatae";
+#Experimentone[1] |=  $e12 " end dn signal on gcm";
+#Experimentone[2] |=  $e13 " end dn signal on gcm";
+#Experimentone[3] |=  $e14 " end dn signal on gcm";
+#Experimentone[4] |=  $e15 " end dn signal on gcm";
+#Experimentone[5] |=  $e16 " end dn signal on gcm";
+#Experimentone[6] |=  $e17 " end dn signal on gcm";
+
+
+//experimenttwo
+#Experimenttwo[0] |=  $e21 "intial signal for gatae";
+#Experimenttwo[0] |=  $e111 "intial signal for gatae";
+#Experimenttwo[1] |=  $e22 " end dn signal on gcm";
+#Experimenttwo[2] |=  $e23 " end dn signal on gcm";
+#Experimenttwo[3] |=  $e24 " end dn signal on gcm";
+#Experimenttwo[4] |=  $e25 " end dn signal on gcm";
+#Experimenttwo[5] |=  $e26 " end dn signal on gcm";
+#Experimenttwo[6] |=  $e27 " end dn signal on gcm";
+
+
+$e10 :=
+{
+ dnsignal = 0 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 0  
+};
+$e11 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 0  
+};
+$e12 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 1 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 1 
+};
+$e13 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 1 and
+skelefate = 1 and
+alx = 0  
+};
+$e14 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 1 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 1 
+
+};
+$e15 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 1 and
+skelefate = 1 and
+alx = 0  
+};
+$e16 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 1 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 1 
+
+};
+$e17 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 1 and
+skelefate = 1 and
+alx = 0  
+
+};
+
+
+
+$e111 :=
+{
+KO(gcm) = 1
+};
+$e21 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 0  
+};
+$e22 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 1 
+};
+$e23 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 1 and
+skelefate = 1 and
+alx = 0  
+};
+$e24 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 1 
+
+};
+$e25 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 1 and
+skelefate = 1 and
+alx = 0  
+};
+$e26 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 0 and
+skelefate = 0 and
+alx = 1
+
+};
+$e27 :=
+{
+dnsignal = 1 and
+dngate = 0 and
+gcm = 0 and
+nsmfate = 1 and
+skelefate = 1 and
+alx = 0  
+
+};
+

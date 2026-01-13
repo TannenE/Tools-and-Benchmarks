@@ -1,0 +1,180 @@
+dngate(0..17);ets(0..17);alx(0..17);dri[+](0..17);sm50(0..17);
+dngate ets positive optional;
+ets alx positive optional;
+ets dri positive optional ;
+ets sm50 positive optional;
+alx dri positive optional;
+alx sm50 positive optional;
+dri sm50 positive optional;
+
+
+
+
+//experiment one c1
+
+
+#Experimentone[0] |=  $c11 "intial signal for gatae";
+#Experimentone[1] |=  $c12 " end dn signal on gcm";
+#Experimentone[2] |=  $c13 " end dn signal on gcm";
+#Experimentone[3] |=  $c14 " end dn signal on gcm";
+#Experimentone[4] |=  $c15 " end dn signal on gcm";
+#Experimentone[5] |=  $c16 " end dn signal on gcm";
+#Experimentone[6] |=  $c17 " end dn signal on gcm";
+
+//experiment two
+#Experimenttwo[0] |=  $c21 "intial signal for gatae";
+#Experimenttwo[0] |=  $c111 "intial signal for gatae";
+#Experimenttwo[1] |=  $c22 " end dn signal on gcm";
+#Experimenttwo[2] |=  $c23 " end dn signal on gcm";
+#Experimenttwo[3] |=  $c24 " end dn signal on gcm";
+#Experimenttwo[4] |=  $c25 " end dn signal on gcm";
+#Experimenttwo[5] |=  $c26 " end dn signal on gcm";
+#Experimenttwo[6] |=  $c27 " end dn signal on gcm";
+
+
+
+
+
+$c10 :=
+{
+ dngate = 0 and
+ets = 0 and
+alx = 0 and
+dri = 0 and
+sm50 = 0 
+};
+
+$c11 :=
+{
+dngate = 1 and
+ets = 0 and
+alx = 0 and
+dri = 0 and
+sm50 = 0 
+};
+$c12 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 0 and
+dri = 0 and
+sm50 = 0 
+};
+$c13 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 0 and
+sm50 = 0 
+};
+$c14 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 0 
+
+};
+$c15 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+
+};
+$c16 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+
+};
+$c17 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+
+};
+
+$c111 :=
+{
+FE(dri) = 1
+
+};
+
+
+
+
+
+
+
+$c21 :=
+{
+dngate = 1 and
+ets = 0 and
+alx = 0 and
+dri = 1 and
+sm50 = 1 
+};
+$c22 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 0 and
+dri = 1 and
+sm50 = 1
+};
+$c23 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+};
+$c24 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+
+};
+$c25 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+
+};
+$c26 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+
+};
+$c27 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+
+};
+

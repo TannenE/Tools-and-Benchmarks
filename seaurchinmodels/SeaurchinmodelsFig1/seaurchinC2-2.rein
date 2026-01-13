@@ -1,0 +1,98 @@
+dngate(0..17);ets(0..17);alx(0..17);dri(0..17);sm50(0..17);
+dngate ets positive optional;
+ets alx positive optional;
+ets dri positive optional;
+ets sm50 positive optional;
+alx dri positive optional;
+alx sm50 positive optional;
+dri sm50 positive optional;
+
+
+
+
+
+
+
+#Experimentone[0] |=  $c11 "intial signal for gatae";
+#Experimentone[1] |=  $c12 " end dn signal on gcm";
+#Experimentone[2] |=  $c13 " end dn signal on gcm";
+#Experimentone[3] |=  $c14 " end dn signal on gcm";
+#Experimentone[4] |=  $c15 " end dn signal on gcm";
+
+
+
+
+
+$c10 :=
+{
+ dngate = 0 and
+ets = 0 and
+alx = 0 and
+dri = 0 and
+sm50 = 0 
+};
+$c11 :=
+{
+dngate = 1 and
+ets = 0 and
+alx = 0 and
+dri = 0 and
+sm50 = 0 
+};
+$c12 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 0 and
+dri = 0 and
+sm50 = 0 
+};
+$c13 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 0 and
+sm50 = 0 
+};
+$c14 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 0 
+
+};
+$c15 :=
+{
+dngate = 1 and
+ets = 1 and
+alx = 1 and
+dri = 1 and
+sm50 = 1 
+
+};
+$c16 :=
+{
+dngate = 0 and
+ets = 0 and
+alx = 0 and
+dri = 0 and
+sm50 = 0 
+
+};
+$c17 :=
+{
+dngate = 0 and
+ets = 0 and
+alx = 0 and
+dri = 0 and
+sm50 = 0 
+
+};
+
+
+
+
+

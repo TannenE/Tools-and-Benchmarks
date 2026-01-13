@@ -1,0 +1,122 @@
+gcm[+](0..17);gatae(0..17);sixhalf6(0..17);dn(0..17);
+dn gcm positive optional;
+gcm gatae positive optional;
+dn gatae positive optional;
+sixhalf6 gcm positive optional;
+gatae sixhalf6 positive optional;
+gcm gcm positive optional;
+dn dn positive optional;
+
+
+
+
+
+//Experiment one A2 chart
+
+
+#Experimentone[0] |=  $a21 "intial signal for gatae";
+#Experimentone[1] |=  $a22 " end dn signal on gcm";
+#Experimentone[2] |=  $a23 " end dn signal on gcm";
+#Experimentone[3] |=  $a24 " end dn signal on gcm";
+
+//experiemtn two
+#Experimenttwo[0] |=  $a31 "intial signal for gatae";
+#Experimenttwo[0] |=  $a111 "intial signal for gatae";
+#Experimenttwo[1] |=  $a32 " end dn signal on gcm";
+#Experimenttwo[2] |=  $a33 " end dn signal on gcm";
+#Experimenttwo[3] |=  $a34 " end dn signal on gcm";
+
+
+
+
+
+
+
+$a20 :=
+{
+ dn = 0 and
+ gcm = 0 and
+ gatae = 0 and
+ sixhalf6 = 0 
+};
+$a21 :=
+{
+dn = 1 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 0 
+};
+$a22 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 0 
+};
+$a23 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 0 and
+sixhalf6 = 1 
+};
+$a24 :=
+{
+dn = 0 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 1 
+
+};
+$a25 :=
+{
+dn = 0 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 0 
+
+};
+
+
+
+$a111 :=
+{
+FE(gcm) = 1
+};
+$a31 :=
+{
+dn = 1 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+};
+$a32 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+};
+$a33 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+};
+$a34 :=
+{
+dn = 0 and
+gatae = 1 and
+gcm = 1 and
+sixhalf6 = 1 
+
+};
+$a35 :=
+{
+dn = 0 and
+gatae = 0 and
+gcm = 0 and
+sixhalf6 = 0 
+
+};
