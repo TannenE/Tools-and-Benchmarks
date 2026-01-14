@@ -83,5 +83,6 @@ Represents the endpoint of the model-refinement pipeline.
 ---
 
 ## Notes
-Artilce_File is the file used in the article:Carbognin, E., Carlini, V., Panariello, F. et al. Esrrb guides naive pluripotent cells through the formative transcriptional programme. Nat Cell Biol 25, 643–657 (2023). https://doi.org/10.1038/s41556-023-01131-x
-Please refer there for further information regarding thi reserach 
+Artilce_File is the file used in the article:
+Carbognin, E., Carlini, V., Panariello, F. et al. Esrrb guides naive pluripotent cells through the formative transcriptional programme. Nat Cell Biol 25, 643–657 (2023). https://doi.org/10.1038/s41556-023-01131-x
+Please refer there for further information regarding this reserach 
