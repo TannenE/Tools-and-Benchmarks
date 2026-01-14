@@ -4,6 +4,7 @@ This repository contains the tools, datasets, and benchmark models used througho
 
 Each top-level folder corresponds to a distinct biological system.  
 Within each folder are exploratory models, and validation benchmarks encoded in RE:IN-compatible formats.
+There is also a folder with a prelimieray inconsistent core algorithm to help aid RE:IN users in running experiments. 
 
 Readers are encouraged to consult the individual `README.md` files inside each folder for detailed descriptions on how to navigate each biological system
 
