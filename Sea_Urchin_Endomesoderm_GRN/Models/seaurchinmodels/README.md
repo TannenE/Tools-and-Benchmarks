@@ -28,17 +28,17 @@ Folders include:
 
 ---
 
-## Search-Inferred and KO / FE Models
+## Seaurchin KO / FE Models
 
-Folders such as:
+
 - `SearchinmodelsFig1`
 - `SearchinmodelsKO+FE_1A`
 - `SearchinmodelsKO+FE_1C`
 - `SearchinmodelsKO+FE_1D`
 - `SearchinmodelsKO+FE_1F`
 
-contain **search-derived GRN ensembles**, including combinations of knockouts (KO) and formative/endomesoderm (FE) constraints.  
-These models were generated using the RE:IN tooling to explore alternative network structures consistent with the figure-based experimental data.
+include combinations of knockouts (KO) and formative/endomesoderm (FE) constraints.  
+These models were generated using the RE:IN tooling to explore alternative network structures based of the original figures
 
 ---
 
