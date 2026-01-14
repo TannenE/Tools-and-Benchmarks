@@ -1,0 +1,1645 @@
+// Synchronous dynamics 
+directive updates sync;
+
+// Default regulation conditions
+directive regulation default;
+
+
+LIF(0..8); CH(0..8); PD(0..8); Stat3(0..8); Tcf3(0..17);
+MEKERK(0..17);	Klf4[!](0..8); Gbx2[!](0..8); Tfcp2l1[!](0..8); Esrrb[!-+](0..8);
+Nanog[!](0..8); Klf2[!](0..8); Tbx3[!](0..8); Sox2[!](0..8); Oct4[!](0..8); Oct6[!](0..8);
+Dnmt3a[!](0..8); Dnmt3b[!](0..8); Utf1[!](0..8); Otx2[!](0..8); Etv5[!](0..8);
+Lef1[!](0..8); Tcf15[!](0..8);
+
+
+LIF		LIF	positive;
+CH		CH	positive;
+PD		PD	positive;
+LIF		Stat3	positive;
+CH		Tcf3	negative;
+PD		MEKERK  negative;
+Stat3	Klf4 positive;
+Stat3	Gbx2	positive;
+Stat3 Tfcp2l1 positive;
+Tcf3 	Tfcp2l1 negative;
+Tcf3 	Esrrb	negative;
+Tcf3 	Tbx3	negative;
+MEKERK	Nanog	negative;
+Klf4 	Klf2 	positive 	optional;
+Klf4 	Tfcp2l1 positive 	optional;
+Klf2 	Oct4 	positive;
+Nanog 	Sox2 	positive 	optional;
+MEKERK Etv5 positive;
+Etv5 Oct6 positive;
+Etv5 Lef1 positive optional;
+Esrrb Dnmt3a positive optional;
+Esrrb Otx2 positive optional;
+Tbx3 Klf4 positive optional;
+Klf4 Sox2 positive optional;
+Lef1 Klf4 negative optional;
+Tfcp2l1 Klf2 positive optional;
+Klf2 Tbx3 positive optional;
+Nanog Klf2 positive optional;
+Tbx3 Esrrb positive optional;
+Esrrb Stat3 positive optional;
+Esrrb Sox2 positive optional;
+Sox2 Esrrb positive optional;
+Tfcp2l1 Tbx3 positive optional;
+Tbx3 Tfcp2l1 positive optional;
+Tfcp2l1 Nanog positive optional;
+Tbx3 Stat3 positive optional;
+Stat3 Tbx3 positive optional;
+Tbx3 Sox2 positive optional;
+Tbx3 Oct6 negative optional;
+Oct6 Tbx3 negative optional;
+Dnmt3a Utf1 positive optional;
+Oct6 Dnmt3a positive;
+Utf1 Dnmt3b positive optional;
+Dnmt3b Otx2 positive;
+Dnmt3b Lef1 positive optional;
+Utf1 Otx2 positive;
+Otx2 Utf1 positive optional;
+Tcf15 Utf1 positive optional;
+Lef1 Otx2 positive;
+Dnmt3b Tbx3 negative optional;
+Nanog Stat3 positive optional;
+Lef1 Stat3 negative optional;
+Dnmt3b Nanog negative optional;
+Oct4 Etv5 positive optional;
+Utf1 Lef1 positive optional;
+Etv5 Tcf15 positive optional;
+
+// ESCs switched from LIF plus 2i to no signals
+#ExperimentFormative[0] |=  $Formative0h;
+#ExperimentFormative[0] |=  $NoSignalCultureConditions;
+#ExperimentFormative[0] |=  $NoKnockDowns;
+#ExperimentFormative[0] |=  $NoOverExpression;
+(#ExperimentFormative[3] |=  $Formative48h) or (#ExperimentFormative[4] |=  $Formative48h) or (#ExperimentFormative[5] |=  $Formative48h) or (#ExperimentFormative[6] |=  $Formative48h) or (#ExperimentFormative[7] |=  $Formative48h) or (#ExperimentFormative[8] |=  $Formative48h) or (#ExperimentFormative[9] |=  $Formative48h) or (#ExperimentFormative[10] |=  $Formative48h) or (#ExperimentFormative[11] |=  $Formative48h) or (#ExperimentFormative[12] |=  $Formative48h) or (#ExperimentFormative[13] |=  $Formative48h) or (#ExperimentFormative[14] |=  $Formative48h) or (#ExperimentFormative[15] |=  $Formative48h) or (#ExperimentFormative[16] |=  $Formative48h) or (#ExperimentFormative[17] |=  $Formative48h) or (#ExperimentFormative[18] |=  $Formative48h) or (#ExperimentFormative[19] |=  $Formative48h) ; 
+#ExperimentFormative[15] |=  $PluriRemainOff;
+#ExperimentFormative[16] |=  $PluriRemainOff;
+#ExperimentFormative[17] |=  $PluriRemainOff;
+#ExperimentFormative[18] |=  $PluriRemainOff;
+#ExperimentFormative[19] |=  $PluriRemainOff;
+#ExperimentFormative[20] |=  $PluriRemainOff;
+#ExperimentFormative[15] |=  $96RemainOff;
+#ExperimentFormative[16] |=  $96RemainOff;
+#ExperimentFormative[17] |=  $96RemainOff;
+#ExperimentFormative[18] |=  $96RemainOff;
+#ExperimentFormative[19] |=  $96RemainOff;
+#ExperimentFormative[20] |=  $96RemainOff;
+
+
+
+// ESCs switched from LIF plus 2i to no signals
+#ExperimentLateFormative[0] |=  $Formative48h;
+#ExperimentLateFormative[0] |=  $NoSignalCultureConditions;
+#ExperimentLateFormative[0] |=  $NoKnockDowns;
+#ExperimentLateFormative[0] |=  $NoOverExpression;
+(#ExperimentLateFormative[3] |=  $Formative96h) or (#ExperimentLateFormative[4] |=  $Formative96h) or (#ExperimentLateFormative[5] |=  $Formative96h) or (#ExperimentLateFormative[6] |=  $Formative96h) or (#ExperimentLateFormative[7] |=  $Formative96h) or (#ExperimentLateFormative[8] |=  $Formative96h) or (#ExperimentLateFormative[9] |=  $Formative96h) or (#ExperimentLateFormative[10] |=  $Formative96h) or (#ExperimentLateFormative[11] |=  $Formative96h) or (#ExperimentLateFormative[12] |=  $Formative96h) or (#ExperimentLateFormative[13] |=  $Formative96h) or (#ExperimentLateFormative[14] |=  $Formative96h) or (#ExperimentLateFormative[15] |=  $Formative96h) or (#ExperimentLateFormative[16] |=  $Formative96h) or (#ExperimentLateFormative[17] |=  $Formative96h) or (#ExperimentLateFormative[18] |=  $Formative96h) or (#ExperimentLateFormative[19] |=  $Formative96h); 
+#ExperimentLateFormative[1] |=  $Pluri48Off;
+#ExperimentLateFormative[2] |=  $Pluri48Off;
+#ExperimentLateFormative[3] |=  $Pluri48Off;
+#ExperimentLateFormative[4] |=  $Pluri48Off;
+#ExperimentLateFormative[5] |=  $Pluri48Off;
+#ExperimentLateFormative[6] |=  $Pluri48Off;
+#ExperimentLateFormative[7] |=  $Pluri48Off;
+#ExperimentLateFormative[8] |=  $Pluri48Off;
+#ExperimentLateFormative[9] |=  $Pluri48Off;
+#ExperimentLateFormative[10] |=  $Pluri48Off;
+#ExperimentLateFormative[11] |=  $Pluri48Off;
+#ExperimentLateFormative[12] |=  $Pluri48Off;
+#ExperimentLateFormative[13] |=  $Pluri48Off;
+#ExperimentLateFormative[14] |=  $Pluri48Off;
+#ExperimentLateFormative[15] |=  $Pluri48Off;
+#ExperimentLateFormative[16] |=  $Pluri48Off;
+#ExperimentLateFormative[17] |=  $Pluri48Off;
+#ExperimentLateFormative[18] |=  $Pluri48Off;
+#ExperimentLateFormative[19] |=  $Pluri48Off;
+#ExperimentLateFormative[20] |=  $Pluri48Off;
+#ExperimentLateFormative[20] |=  $PluriRemainOff;
+#ExperimentLateFormative[21] |=  $PluriRemainOff;
+#ExperimentLateFormative[22] |=  $PluriRemainOff;
+#ExperimentLateFormative[23] |=  $PluriRemainOff;
+#ExperimentLateFormative[24] |=  $PluriRemainOff;
+#ExperimentLateFormative[25] |=  $PluriRemainOff;
+#ExperimentLateFormative[20] |=  $96RemainOff;
+#ExperimentLateFormative[21] |=  $96RemainOff;
+#ExperimentLateFormative[22] |=  $96RemainOff;
+#ExperimentLateFormative[23] |=  $96RemainOff;
+#ExperimentLateFormative[24] |=  $96RemainOff;
+#ExperimentLateFormative[25] |=  $96RemainOff;
+
+
+// ESCs switched from 2i Plus Lif to no signals 48h EsrrbKO
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[0] |=  $FormativeTwoiPlusLif0hEsrrbKO;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[0] |=  $NoSignalCultureConditions;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[0] |=  $EsrrbKD;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[0] |=  $NoOverExpression;
+(#ExperimentFormativeTwoiPlusLif48hEsrrbKO[3] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[4] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[5] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[6] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[7] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[8] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[9] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[10] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[11] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[12] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[13] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[14] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[15] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[16] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[17] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[18] |=  $FormativeTwoiPlusLif48hEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[19] |=  $FormativeTwoiPlusLif48hEsrrbKO) ; 
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[1] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[2] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[3] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[4] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[5] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[6] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[7] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[8] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[9] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[10] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[11] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[12] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[13] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[14] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[15] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[16] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[17] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[18] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[19] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[20] |=  $EsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[19] |=  $DifferentiateOff;
+#ExperimentFormativeTwoiPlusLif48hEsrrbKO[20] |=  $DifferentiateOff;
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[1] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[2] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[2] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[3] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[3] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[4] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[4] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[5] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[5] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[6] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[6] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[7] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[7] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[8] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[8] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[9] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[9] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[10] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[10] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[11] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[11] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[12] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[12] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[13] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[13] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[14] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[14] |=  $Oct4Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[15] |=  $Oct4On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[1] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[2] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[2] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[3] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[3] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[4] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[4] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[5] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[5] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[6] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[6] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[7] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[7] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[8] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[8] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[9] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[9] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[10] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[10] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[11] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[11] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[12] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[12] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[13] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[13] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[14] |=  $Sox2On));
+not((#ExperimentFormativeTwoiPlusLif48hEsrrbKO[14] |=  $Sox2Off)  and (#ExperimentFormativeTwoiPlusLif48hEsrrbKO[15] |=  $Sox2On));
+
+
+// ESCs switched from 2i Plus Lif to no signals 48h Accute EsrrbKO
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[0] |=  $FormativeTwoiPlusLif0hAccEsrrbKO;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[0] |=  $NoSignalCultureConditions;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[0] |=  $EsrrbKD;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[0] |=  $NoOverExpression;
+(#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[3] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[4] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[5] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[6] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[7] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[8] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[9] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[10] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[11] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[12] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[13] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[14] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[15] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[16] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[17] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[18] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) or (#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[19] |=  $FormativeTwoiPlusLif48hAccEsrrbKO) ; 
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[1] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[2] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[3] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[4] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[5] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[6] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[7] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[8] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[9] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[10] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[11] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[12] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[13] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[14] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[15] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[16] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[17] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[18] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[19] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[20] |=  $AccEsrrbKOOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[19] |=  $DifferentiateOff;
+#ExperimentFormativeTwoiPlusLif48hAccEsrrbKO[20] |=  $DifferentiateOff;
+
+// Culture conditions 
+
+$TwoiPlusLifCultureConditions :=
+{
+ LIF = 1 and
+ CH = 1 and 
+ PD = 1
+};
+
+$TwoiCultureConditions :=
+{
+ LIF = 0 and
+ CH = 1 and
+ PD = 1
+};
+
+$LifPlusPdCultureConditions :=
+{
+ LIF = 1 and 
+ CH = 0 and 
+ PD = 1
+};
+
+$LifPlusChCultureConditions :=
+{
+ LIF = 1 and
+ CH = 1 and 
+ PD = 0
+};
+
+$NoSignalCultureConditions :=
+{
+ LIF = 0 and
+ CH = 0 and 
+ PD = 0
+};
+
+$JustPdCultureConditions :=
+{
+ LIF = 0 and
+ CH = 0 and 
+ PD = 1
+};
+
+// Knock downs and overexpressions
+
+$NoKnockDowns :=
+{
+ KO(Esrrb) = 0 
+};
+
+
+
+
+
+
+
+$NoOverExpression :=
+{
+ FE(Esrrb)=0 
+};
+
+
+// Gene expression levels patterns under each culture condition 
+
+$TwoiPlusLif:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$TwoiPlusLifForm:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1 and
+ Otx2=0 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=1 and
+ Dnmt3a=0 and
+ Dnmt3b=0 and
+ Oct6=0
+};
+
+$TwoiPlusLifFormAbs:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1 
+};
+
+$Twoi:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0
+};
+
+$TwoiForm:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0 and
+ Otx2=0 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=1 and
+ Dnmt3a=0 and
+ Dnmt3b=0 and
+ Oct6=0
+};
+
+$LifPlusPd:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=0 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=0 and
+ Tcf3=1 and
+ Stat3=1
+};
+
+$LifPlusPdForm:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=0 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=0 and
+ Tcf3=1 and
+ Stat3=1 and
+ Otx2=0 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=0 and
+ Dnmt3a=0 and
+ Dnmt3b=0 and
+ Oct6=0
+};
+
+$LifPlusCh:=
+{
+ MEKERK = 1 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$NoSignal:=
+{
+ MEKERK = 1 and
+ Oct4=0 and
+ Sox2=0 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Gbx2 = 0 and 
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Tbx3=0 and
+ Stat3=0
+};
+
+// Twoi conditions with Oct4 knockout
+$TwoiOctFourKnockout:=
+{
+ MEKERK = 0 and
+ Oct4=0 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0
+};
+
+// Twoi conditions with Sox2 knockout
+$TwoiSoxTwoKnockout:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=0 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0
+};
+
+// LIF plus PD conditions with Stat3 knockout
+$2iStatThreeKnockout :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0
+};
+ 
+$FinalStateAllZeroExpression:=
+{
+ MEKERK = 0 and
+ Oct4=0 and
+ Sox2=0 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Gbx2=0 and 
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Tbx3=0 and
+ Stat3=0
+};
+
+$2iEsrrbKnockout:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0
+};
+
+$2iPlusLifEsrrbKnockout:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$FinalState2iPlusLifEsrrbKnockout:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+// Twoi conditions with esrrb overexpression
+$2iEsrrbOverexpression :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0
+};
+
+// Only PD
+$FinalStatePdOnlyEsrrbOverexpression:=
+{
+ Oct4 = 1 and 
+ Sox2 = 1 and 
+ Nanog = 1 and
+ Esrrb = 1 and
+ Klf4 = 0
+};
+
+// Nanog knock down in 2i plus LIF
+$2iPlusLifNanogKnockdown:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+// Final state
+$FinalStateNanogKnockout:=
+{
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Tbx3=1 and
+ Esrrb=0
+};
+
+// Initial state Tfcp2l1 overexpression in 2i plus LIF
+$2iPlusLifTfcp2l1Overexpression:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+// Final state Tfcp2l1 overexpression
+$FinalStateTfcp2l1Overexpression:=
+{
+ Oct4=1 and
+ Sox2=1 and 
+ Nanog=1 and 
+ Esrrb=1 and 
+ Klf4=0
+};
+
+$Oct4AndSox2Maintained :=
+{
+ Oct4 = 1 and 
+ Sox2 = 1
+};
+
+
+$TwoiPlusLifWithKlf4Sall4DKD := 
+{
+Esrrb = 1 and
+Tfcp2l1 = 1 and
+Klf4 = 0 and
+Klf2 = 1 and
+Tbx3 = 1 and
+Gbx2 = 1 and
+Nanog = 1 and
+Stat3 = 1 and
+Oct4 = 1 and
+Sox2 = 1 and
+Tcf3 = 0 and
+MEKERK = 0
+};
+
+
+
+$TwoiPlusLifWithKlf2Tbx3DKD := 
+{
+Esrrb = 1 and
+Tfcp2l1 = 1 and
+Klf4 = 1 and
+Klf2 = 0 and
+Tbx3 = 0 and
+Gbx2 = 1 and
+Nanog = 1 and
+Stat3 = 1 and
+Oct4 = 1 and
+Sox2 = 1 and
+Tcf3 = 0 and
+MEKERK = 0
+};
+
+$EpiSC :=
+{
+ MEKERK = 1 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Tcf3=1 and
+ Stat3=0 
+};
+
+$ZeroInitialConditions:=
+{
+ MEKERK = 1 and
+ Oct4=0 and
+ Sox2=0 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Tcf3=0 and
+ Stat3=0
+};
+
+$EpiConversionState:=
+{
+ Nanog=1 and
+ Oct4=1 and 
+ Sox2=1 and
+ Tbx3=1 and 
+ Esrrb=1 and
+ Tfcp2l1=1
+};
+
+$NanogKOEpiSC:=
+{
+ MEKERK = 1 and
+ Oct4=1 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Tcf3=1 and
+ Stat3=0 
+};
+
+$LifPlusChWithNanogKO:=
+{
+ MEKERK = 1 and
+ Oct4=1 and
+ Nanog=0 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Stat3=1 
+};
+
+$preIPSState:=
+{
+ MEKERK = 1 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=1 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Tcf3=0 and
+ Stat3=1 
+};
+
+// Everything expressed but not constraining Tcf3 or MEKERK
+$EverythingExpressed:=
+{
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Stat3=1 
+};
+
+
+$TwoiPlusLifWithGbx2NanogDKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$TwoiPlusLifWithTfcpKlf2DKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$TwoiPlusLifWithSall4Klf2DKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=0 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$TwoiPlusLifWithKlf4EsrrbDKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$TwoiPlusLifWithKlf4NanogDKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$TwoiPlusLifWithGbx2TfcpDKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=0 and
+ Klf4=1 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$AtLeastTwoiWithKlf4OE:=
+{
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Tbx3=1 
+};
+
+$EpiSCWithKlf4OE:=
+{
+ MEKERK = 1 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=1 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Tcf3=1 and
+ Stat3=0 
+};
+
+
+$TwoiPlusLifWithKlf4KD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+$TwoiPlusLifWithKlf2KD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=0 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+
+$TwoiPlusLifWithTbx3KD := 
+{
+Esrrb = 1 and
+Tfcp2l1 = 1 and
+Klf4 = 1 and
+Klf2 = 1 and
+Tbx3 = 0 and
+Gbx2 = 1 and
+Nanog = 1 and
+Stat3 = 1 and
+Oct4 = 1 and
+Sox2 = 1 and
+Tcf3 = 0 and
+MEKERK = 0
+};
+
+
+
+$TwoiPlusLifWithGbx2KD := 
+{
+Esrrb = 1 and
+Tfcp2l1 = 1 and
+Klf4 = 1 and
+Klf2 = 1 and
+Gbx2 = 0 and
+Nanog = 1 and
+Stat3 = 1 and
+Oct4 = 1 and
+Sox2 = 1 and
+Tcf3 = 0 and
+MEKERK = 0
+};
+
+
+$TwoiPlusLifWithEsrrbGbx2DKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+
+
+$TwoiPlusLifWithTfcp2l1Tbx3DKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=0 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=0 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+
+
+$TwoiPlusLifWithKlf4Gbx2DKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+
+
+$TwoiPlusLifWithEsrrbNanogDKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+
+
+$TwoiPlusLifWithSall4Gbx2DKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+
+
+$TwoiPlusLifWithTbx3Gbx2DKD :=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Tcf3=0 and
+ Stat3=1
+};
+
+
+
+$EsrrbKD := 
+{
+ KO(Esrrb) = 1 
+};
+
+
+
+
+
+$Formative48h :=
+{
+ MEKERK=1 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=1 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=1 and
+ Tbx3=0 and
+ Tcf3=1 and 
+ Stat3=1 and
+ Otx2=1 and
+ Tcf15=1 and
+ Lef1=1 and
+ Utf1=1 and
+ Etv5=1 and
+ Dnmt3a=1 and
+ Dnmt3b=1 and
+ Oct6=0
+}; 
+
+$Formative48h1 :=
+{
+ Klf4=0 and
+ Klf2=0 and
+ Esrrb=0 and
+ Tfcp2l1=0 and
+ Tbx3=0 and
+ Stat3=1 and
+ Nanog=0 and
+ Oct4=1 and
+ Sox2=1 and 
+ Gbx2=1 and
+ Tcf3=1 and 
+ Dnmt3a = 1 and
+ Dnmt3b = 1 and
+ Utf1=1 and
+ Otx2=1 and
+ Etv5=1 and
+ Lef1=1 and
+ Tcf15=1
+}; 
+
+$Formative0h:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1 and
+ Otx2=0 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=1 and
+ Dnmt3a=0 and
+ Dnmt3b=0 and
+ Oct6=0
+};
+
+
+$FormativeTwoi0h:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0 and
+ Otx2=0 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=1 and 
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Oct6=0 
+};
+
+$FormativeTwoi0hAbs:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Otx2=0 and
+ Dnmt3b = 0 and
+ Oct6=0 
+};
+
+
+$FormativeTwoi0hEtv5KO:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=0 and
+ Otx2=1 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=0 and 
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Oct6=0 
+};
+
+$FormativeTwoi0hLef1Oct6DKD:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Otx2=0 and
+ Lef1=0 and
+ Dnmt3b = 0 and
+ Oct6=0 
+};
+
+$FormativeTwoi16h :=
+{
+ MEKERK=1 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=1 and
+ Tbx3=0 and
+ Tcf3=1 and 
+ Stat3=0 and
+ Otx2=1 and
+ Tcf15=1 and
+ Lef1=1 and
+ Utf1=1 and
+ Etv5=1 and 
+ Dnmt3a = 1 and
+ Dnmt3b = 1 and
+ Oct6=1 
+};
+
+$FormativeTwoi16hEtv5KO :=
+{
+ MEKERK=1 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=1 and 
+ Stat3=0 and
+ Otx2=1 and
+ Tcf15=1 and
+ Lef1=0 and
+ Utf1=1 and
+ Etv5=0 and 
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Oct6=0
+};
+
+$FormativeTwoi48h :=
+{
+ MEKERK=1 and
+ Oct4=1 and
+ Sox2=0 and
+ Nanog=0 and
+ Otx2=1 and
+ Dnmt3b = 1 and
+ Oct6=1 
+};
+
+$FormativeTwoi48hLef1Oct6DKD :=
+{
+ MEKERK=1 and
+ Oct4=1 and
+ Sox2=0 and
+ Nanog=0 and
+ Otx2=1 and
+ Lef1=0 and
+ Dnmt3b=1 and
+ Oct6=0 
+};
+
+$Formative96h :=
+{
+ MEKERK=1 and
+ Oct4=0 and
+ Sox2=0 and 
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Tcf3=1 and 
+ Stat3=0 and
+ Otx2=1 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=0 and
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Oct6=0
+}; 
+
+$Formative96hfull :=
+{
+ Klf4=0 and
+ Klf2=0 and
+ Esrrb=0 and
+ Tfcp2l1=0 and
+ Tbx3=0 and
+ Stat3=0 and
+ Nanog=0 and
+ Oct4=0 and
+ Sox2=0 and 
+ Gbx2=0 and
+ Tcf3=1 and 
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Utf1=0 and
+ Otx2=1 and
+ Etv5=0 and
+ Nr0b1=0 and
+ Lef1=0 and
+ Tcf15=0
+}; 
+
+
+$Formative96hEsrrbOE :=
+{
+ MEKERK=1 and
+ Oct4=1 and
+ Sox2=1 and 
+ Nanog=0 and
+ Esrrb=1 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=1 and
+ Tcf3=1 and 
+ Stat3=1 and
+ Otx2=1 and
+ Tcf15=1 and
+ Lef1=1 and
+ Utf1=0 and
+ Etv5=1 and
+ Dnmt3a=1 and
+ Dnmt3b=0 and
+ Oct6=0
+};
+
+$FormativeEsrrbOE:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=1 and
+ Esrrb=1 and
+ Klf2=1 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Gbx2=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Stat3=1 and
+ Otx2=0 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=1 and
+ Dnmt3a=0 and
+ Dnmt3b=0 and
+ Oct6=0
+};
+
+$FormativeTwoiPlusLif0hEsrrbKO:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Sox2=0 and
+ Nanog=1 and
+ Esrrb=0 and
+ Klf2=1 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=1 and
+ Tbx3=0 and
+ Tcf3=0 and
+ Stat3=1 and
+ Otx2=0 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=1 and
+ Dnmt3a=0 and
+ Dnmt3b=0 and
+ Oct6=0
+};
+
+$FormativeTwoiPlusLif0hAccEsrrbKO:=
+{
+ MEKERK = 0 and
+ Oct4=1 and
+ Esrrb=0 and
+ Tfcp2l1=1 and
+ Klf4=1 and
+ Tbx3=1 and
+ Tcf3=0 and
+ Otx2=0 and
+ Tcf15=0 and
+ Utf1=0 and
+ Dnmt3b=0 
+};
+
+$FormativeTwoiPlusLif48hEsrrbKO:=
+{
+ MEKERK = 1 and
+ Oct4=1 and
+ Sox2=1 and
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Tcf3=1 and
+ Stat3=1 and
+ Otx2=0 and
+ Tcf15=1 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=1 and
+ Dnmt3a=1 and
+ Dnmt3b=0 and
+ Oct6=0
+};
+
+$FormativeTwoiPlusLif48hAccEsrrbKO:=
+{
+ MEKERK = 1 and
+ Oct4=1 and
+ Esrrb=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Tbx3=0 and
+ Tcf3=1 and
+ Otx2=0 and
+ Tcf15=1 and
+ Utf1=0 and
+ Dnmt3b=0 
+};
+
+$PluriRemainOff:=
+{
+ Klf4=0 and
+ Klf2=0 and
+ Esrrb=0 and
+ Tfcp2l1=0 and
+ Tbx3=0 
+};
+
+$96RemainOff:=
+{
+ Oct4=0 and
+ Sox2=0 and 
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Utf1=0 and
+ Etv5=0 and
+ Lef1=0 and
+ Tcf15=0 and
+ Gbx2=0 and
+ Oct6=0
+}; 
+
+$Oct4Sox2Off:=
+{
+ Oct4=0 and
+ Sox2=0
+};
+
+$DifferentiateOff :=
+{
+ Oct4=0 and
+ Sox2=0 and 
+ Nanog=0 and
+ Esrrb=0 and
+ Klf2=0 and
+ Tfcp2l1=0 and
+ Klf4=0 and
+ Gbx2=0 and
+ Tbx3=0 and
+ Stat3=0 and
+ Otx2=0 and
+ Tcf15=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Etv5=0 and
+ Dnmt3a = 0 and
+ Dnmt3b = 0 and
+ Oct6=0
+}; 
+
+$Pluri48Off :=
+{
+ Klf4=0 and
+ Klf2=0 and
+ Esrrb=0 and
+ Tfcp2l1=0 and
+ Tbx3=0 and
+ Nanog=0
+};
+
+
+$EsrrbKOOff:=
+{
+ Otx2=0 and
+ Lef1=0 and
+ Utf1=0 and
+ Dnmt3b=0
+};
+
+$AccEsrrbKOOff:=
+{
+ Otx2=0 and
+ Utf1=0 and
+ Dnmt3b=0
+};
+
+$Oct4Off:=
+{
+ Oct4=0
+};
+
+$Oct4On:=
+{
+ Oct4=1
+};
+
+$Sox2Off:=
+{
+ Sox2=0
+};
+
+$Sox2On:=
+{
+ Sox2=1
+};
+
+$Klf2Off:=
+{
+ Klf2=0
+};
+
+$Klf2On:=
+{
+ Klf2=1
+};
+
+$Gbx2Off:=
+{
+ Gbx2=0
+};
+
+$Gbx2On:=
+{
+ Gbx2=1
+};
+
+
+
+
+
+$NanogOff:=
+{
+ Nanog=0
+};
+
+$NanogOn:=
+{
+ Nanog=1
+};
+
+$EsrrbOff:=
+{
+ Esrrb=0
+};
+
+$EsrrbOn:=
+{
+ Esrrb=1
+};
+
+$Klf4Off:=
+{
+ Klf4=0
+};
+
+$Klf4On:=
+{
+ Klf4=1
+};
+
+$Tbx3Off:=
+{
+ Tbx3=0
+};
+
+$Tbx3On:=
+{
+ Tbx3=1
+};
